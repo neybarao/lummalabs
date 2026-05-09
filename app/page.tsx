@@ -1,470 +1,280 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import {
-  MessageSquare,
-  Clock,
-  Zap,
-  TrendingUp,
-  CheckCircle2,
-  Search,
-  Settings,
-  Bot,
-  GraduationCap,
-  Headphones,
-  ArrowRight,
-  Stethoscope,
-  Briefcase,
-  Store,
-  Dumbbell,
-  Truck,
-  Users
-} from "lucide-react";
 
-export default function LandingPage() {
+const SPARKLE_PATH =
+  "M45.7 360.4C19.8 350.8 0 327.7 0 300C0 272.3 19.8 249.2 45.7 239.6L48.3 238.7C138 209 209 138 238.7 48.3C247.7 21.1 271.4 0 300 0C328.6 0 352.3 21.1 361.3 48.3C391 138 462 209 551.8 238.7L554.3 239.6C580.2 249.2 600 272.3 600 300C600 327.7 580.2 350.8 554.3 360.4L551.8 361.3C462 391 391 462 361.3 551.7C352.3 578.9 328.6 600 300 600C271.4 600 247.7 578.9 238.7 551.7C209 462 138 391 48.3 361.3L45.7 360.4Z";
+
+function Sparkle({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-secondary/20 pt-16 pb-24 sm:pt-24 sm:pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            {/* Logo/Brand */}
-            <div className="inline-block">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              <Image
-                  src="/lumma-logo.svg"
-                  alt="Lumma Labs - Automação com Inteligência Artificial"
-                  width={200}
-                  height={80}
-                  priority
-                  className="h-[120px] w-auto"
-                />
-              </h1>
-              <Badge variant="secondary" className="text-sm font-normal">
-              Atendimento Automatizado com IA no WhatsApp
-              </Badge>
-            </div>
+    <svg viewBox="0 0 600 600" fill="currentColor" className={className} style={style} aria-hidden="true">
+      <path d={SPARKLE_PATH} />
+    </svg>
+  );
+}
 
-            {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground max-w-4xl mx-auto leading-tight">
-              Automação de Atendimento com IA no WhatsApp — Rápida, Humana e Escalável
-            </h2>
+const services = [
+  {
+    num: "01",
+    name: ["Identidade", "visual"],
+    desc: "Logo, paleta, tipografia e regras de uso. A base sobre a qual tudo o mais se apoia. Trabalhamos próximo, com 2 a 3 rodadas de revisão.",
+    deliverables: ["logo principal · variações", "guia de marca · arquivos abertos", "4 a 6 semanas"],
+  },
+  {
+    num: "02",
+    name: ["Design"],
+    desc: "Cardápio, embalagem, sinalização, material impresso, peças avulsas. Levamos a identidade pra dentro de cada detalhe da operação.",
+    deliverables: ["arte final pra impressão", "versões editáveis · social", "1 a 4 semanas"],
+  },
+  {
+    num: "03",
+    name: ["Redes", "sociais"],
+    desc: "Templates de feed, story e carrossel. Tom de voz, cronograma editorial e instruções claras pra você ou pra quem cuidar das redes.",
+    deliverables: ["10 a 20 templates", "guia editorial", "2 a 3 semanas"],
+  },
+  {
+    num: "04",
+    name: ["Websites"],
+    desc: "Site institucional, landing page ou loja simples. Carrega rápido, fácil de atualizar, claro pra quem chega. Nada de plugin que ninguém entende.",
+    deliverables: ["design · código · publicação", "treinamento de uso", "3 a 8 semanas"],
+  },
+  {
+    num: "05",
+    name: ["Aplicativos"],
+    desc: "Quando o seu negócio precisa de algo mais que um site. Desenho UX/UI, protótipos navegáveis e acompanhamento técnico até o app no ar.",
+    deliverables: ["protótipo · design system", "handoff de desenvolvimento", "8 a 16 semanas"],
+  },
+  {
+    num: "06",
+    name: ["Manual de", "comunicação"],
+    desc: "Define como a empresa fala — interna e externamente. Quem comunica, o quê, quando e por qual canal. Tom de voz, mensagens-chave, regras de crise e fluxos para time, clientes e imprensa.",
+    deliverables: ["tom de voz · vocabulário", "matriz quem-fala-o-quê", "playbooks por canal", "2 a 4 semanas"],
+  },
+];
 
-            {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Transforme seu atendimento em uma operação automatizada que responde em segundos, funciona 24/7 e mantém o tom humano da sua marca.
+const steps = [
+  {
+    num: "01",
+    title: "Conversa",
+    desc: "30 minutos pra entender o seu negócio, o que está funcionando e o que está te incomodando. Sem compromisso, sem vendinha.",
+  },
+  {
+    num: "02",
+    title: "Proposta",
+    desc: "Mandamos um documento com escopo, prazo e investimento. Tudo escrito em português, sem letra miúda.",
+  },
+  {
+    num: "03",
+    title: "Trabalho",
+    desc: "Você acompanha o que está sendo feito em pontos de checagem combinados. Revisões claras, sem ping-pong.",
+  },
+  {
+    num: "04",
+    title: "Entrega",
+    desc: "No prazo combinado, com a qualidade prometida. Arquivos abertos, treinamento curto e um período de ajuste pós-entrega.",
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      <header className="site-header" id="top">
+        <a className="site-header__logo" href="#top">
+          <Image
+            src="/Logo-lumma-header.svg"
+            alt="Lumma"
+            width={274}
+            height={64}
+            className="site-header__logo-img"
+            priority
+          />
+        </a>
+        <nav className="site-nav">
+          <a href="#servicos">Serviços</a>
+          <a href="#processo">Processo</a>
+          <a href="#manifesto">Manifesto</a>
+          <a className="nav-cta" href="#contato">Conversar</a>
+        </nav>
+      </header>
+
+      <section className="hero">
+        <div className="hero__card">
+          <div className="hero__inner">
+            <h1 className="hero-headline">
+              A luz que falta
+              <br />
+              na sua <em>marca.</em>
+            </h1>
+            <p className="hero-sub">
+              Design, multimídia e comunicação pra negócios pequenos que querem ser vistos como o que realmente são.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto text-base font-semibold h-12 px-8"
-                aria-label="Iniciar automação do WhatsApp"
-              >
-                Quero automatizar meu WhatsApp
-                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto text-base h-12 px-8"
-                aria-label="Ver demonstração de funcionamento"
-              >
-                Ver como funciona
-              </Button>
-            </div>
-
-            {/* Trust Badge */}
-            <p className="text-sm text-muted-foreground pt-4">
-              Implementação completa em poucos dias.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem Section */}
-      <section className="py-16 sm:py-24 bg-background" aria-labelledby="problem-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 id="problem-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Seu atendimento está fazendo você perder clientes
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              { icon: Clock, text: "Respostas lentas espantam oportunidades" },
-              { icon: MessageSquare, text: "Conversas acumuladas viram caos" },
-              { icon: Zap, text: "Atendimento fora do horário? Impossível" },
-              { icon: Users, text: "Perguntas repetidas consomem tempo e energia" },
-              { icon: TrendingUp, text: "Falta padronização = experiência ruim" }
-            ].map((item, index) => (
-              <Card key={index} className="border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-destructive/10 p-3 flex-shrink-0" aria-hidden="true">
-                      <item.icon className="h-6 w-6 text-destructive" />
-                    </div>
-                    <p className="text-foreground font-medium leading-relaxed pt-2">
-                      {item.text}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <p className="text-xl sm:text-2xl font-semibold text-foreground max-w-3xl mx-auto">
-              Você não precisa contratar mais pessoas. Só precisa automatizar do jeito certo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* Solution Section */}
-      <section className="py-16 sm:py-24 bg-secondary/20" aria-labelledby="solution-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 max-w-4xl mx-auto">
-            <h2 id="solution-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Atenda como um humano — só que muito mais rápido
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-              A Lumma Labs cria automações inteligentes que integram IA + WhatsApp para eliminar tarefas manuais, melhorar a experiência do cliente e aumentar conversões.
-            </p>
-            <div className="inline-block bg-accent/20 border-2 border-accent rounded-lg px-6 py-4 mt-4">
-              <p className="text-lg font-semibold text-foreground">
-                Automação que não parece robô. IA treinada para falar como você.
-              </p>
+            <div className="hero-cta-row">
+              <a className="btn btn-primary" href="#contato">Começar uma conversa</a>
+              <a className="btn btn-ghost-linen" href="#servicos">Ver serviços</a>
             </div>
           </div>
         </div>
       </section>
 
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* Benefits Section */}
-      <section className="py-16 sm:py-24 bg-background" aria-labelledby="benefits-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 id="benefits-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Benefícios diretos para o seu negócio
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Clock,
-                title: "Atendimento 24/7",
-                description: "Seu negócio nunca mais para"
-              },
-              {
-                icon: Zap,
-                title: "Respostas imediatas",
-                description: "Nada de filas de espera"
-              },
-              {
-                icon: MessageSquare,
-                title: "Menos repetição",
-                description: "Adeus perguntas iguais todo dia"
-              },
-              {
-                icon: TrendingUp,
-                title: "Mais vendas",
-                description: "Clientes atendidos rápido compram mais"
-              },
-              {
-                icon: Bot,
-                title: "IA humanizada",
-                description: "Linguagem alinhada à sua marca"
-              },
-              {
-                icon: CheckCircle2,
-                title: "Processos padronizados",
-                description: "Atendimento consistente, sempre"
-              }
-            ].map((benefit, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="rounded-lg bg-accent/20 w-fit p-3 mb-2" aria-hidden="true">
-                    <benefit.icon className="h-6 w-6 text-foreground" />
-                  </div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                  <CardDescription className="text-base pt-2">
-                    {benefit.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
+      <section className="manifesto" id="manifesto">
+        <div className="manifesto__inner">
+          <div className="section-eyebrow">Manifesto</div>
+          <p className="manifesto-text">
+            A gente acredita que <em>pequeno não é sinônimo de amador.</em>{" "}
+            Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global.{" "}
+            Que comunicação clara é direito do cliente, não luxo.{" "}
+            Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser bem feito.</strong>
+          </p>
+          <div className="manifesto-sig">— Lumma · v. 1.0 · 2026</div>
         </div>
+        <Sparkle className="manifesto-sparkle" />
       </section>
 
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* Services Section */}
-      <section className="py-16 sm:py-24 bg-secondary/20" aria-labelledby="services-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 id="services-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              O que entregamos
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
-            {[
-              {
-                icon: Search,
-                title: "Diagnóstico Estratégico",
-                description: "Mapeamos todo seu fluxo de atendimento e descobrimos gargalos."
-              },
-              {
-                icon: Settings,
-                title: "Implementação Completa",
-                description: "Integrações, lógica da IA, fluxos e testes."
-              },
-              {
-                icon: Bot,
-                title: "Automações Prontas",
-                description: "Agendamentos, dúvidas frequentes, vendas, suporte e follow-up inteligente."
-              },
-              {
-                icon: GraduationCap,
-                title: "Treinamento",
-                description: "Sua equipe aprende a operar e evoluir todo o sistema."
-              },
-              {
-                icon: Headphones,
-                title: "Suporte",
-                description: "Acompanhamento contínuo para garantir performance."
-              }
-            ].map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader className="space-y-4">
-                  <div className="mx-auto rounded-full bg-primary/10 w-16 h-16 flex items-center justify-center" aria-hidden="true">
-                    <service.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button
-              size="lg"
-              className="text-base font-semibold h-12 px-8"
-              aria-label="Falar com especialista"
-            >
-              Quero falar com um especialista
-              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* How It Works Section */}
-      <section className="py-16 sm:py-24 bg-background" aria-labelledby="how-it-works-heading">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 id="how-it-works-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Como funciona
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                step: "1",
-                title: "Reunião inicial",
-                description: "Alinhamos objetivo e necessidades"
-              },
-              {
-                step: "2",
-                title: "Desenho dos fluxos",
-                description: "Criamos a jornada do atendimento"
-              },
-              {
-                step: "3",
-                title: "Implementação com IA",
-                description: "Automação ativa e testada"
-              },
-              {
-                step: "4",
-                title: "Treinamento + suporte",
-                description: "Sua equipe pronta para operar"
-              }
-            ].map((item, index) => (
-              <Card key={index} className="border-l-4 border-l-accent">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-6">
-                    <div
-                      className="rounded-full bg-accent text-foreground w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0"
-                      aria-label={`Passo ${item.step}`}
-                    >
-                      {item.step}
-                    </div>
-                    <div className="pt-2">
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* Target Audience Section */}
-      <section className="py-16 sm:py-24 bg-secondary/20" aria-labelledby="target-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-12">
-            <h2 id="target-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Para quem é
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Ideal para negócios que dependem de atendimento para vender:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12">
-            {[
-              { icon: Stethoscope, label: "Clínicas e consultórios" },
-              { icon: Briefcase, label: "Prestadores de serviço" },
-              { icon: Store, label: "Lojas físicas" },
-              { icon: Dumbbell, label: "Academias" },
-              { icon: Truck, label: "Delivery" },
-              { icon: Users, label: "Profissionais liberais" },
-              { icon: Store, label: "Negócios locais" }
-            ].map((target, index) => (
-              <Card key={index} className="text-center hover:shadow-md transition-shadow">
-                <CardContent className="pt-6 pb-6">
-                  <div className="mx-auto rounded-lg bg-primary/10 w-12 h-12 flex items-center justify-center mb-3" aria-hidden="true">
-                    <target.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <p className="text-sm font-medium text-foreground leading-tight">
-                    {target.label}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <p className="text-xl font-semibold text-foreground">
-              Se você atende pelo WhatsApp, essa solução é para você.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <Separator className="max-w-7xl mx-auto" />
-
-      {/* Trust Section */}
-      <section className="py-16 sm:py-24 bg-background" aria-labelledby="trust-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6">
-            <h2 id="trust-heading" className="text-3xl sm:text-4xl font-bold text-foreground">
-              Por que confiar na Lumma Labs?
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Mesmo sendo uma empresa nova, trabalhamos com processos sólidos, IA treinada e automações projetadas para resultados imediatos.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            {[
-              "Linguagem da IA treinada com sua personalidade",
-              "Fluxos inteligentes focados em conversão",
-              "Execução rápida e prática",
-              "Resultado real no dia a dia, não teoria"
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" aria-hidden="true" />
-                <p className="text-foreground font-medium text-lg">{item}</p>
+      <section className="services section" id="servicos">
+        <div className="section-eyebrow">Serviços · seis coisas, bem feitas</div>
+        <h2 className="section-title">O que a gente <em>faz.</em></h2>
+        <div className="services-grid">
+          {services.map((s) => (
+            <div className="service" key={s.num}>
+              <div className="service__num">{s.num}</div>
+              <div className="service__name">
+                {s.name.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < s.name.length - 1 && <br />}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12 space-y-4">
-            <p className="text-muted-foreground text-lg">
-              Você não compra um chatbot.
-            </p>
-            <p className="text-2xl sm:text-3xl font-bold text-foreground">
-              Você compra eficiência.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-secondary/20 to-background" aria-labelledby="cta-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <h2 id="cta-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-              Pronto para automatizar seu atendimento com IA?
-            </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Vamos criar uma automação personalizada, eficiente e humanizada — feita sob medida para o seu negócio.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto text-base font-semibold h-12 px-8"
-                aria-label="Iniciar automação do WhatsApp"
-              >
-                Quero automatizar meu WhatsApp
-                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto text-base h-12 px-8"
-                aria-label="Chamar no WhatsApp"
-              >
-                Chamar no WhatsApp
-              </Button>
+              <div className="service__desc">{s.desc}</div>
+              <div className="service__deliverables">
+                {s.deliverables.map((d, i) => (
+                  <span key={i}>
+                    {d}
+                    {i < s.deliverables.length - 1 && <br />}
+                  </span>
+                ))}
+              </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <p className="text-sm text-muted-foreground pt-4">
-              Resposta em até 1 hora.
-            </p>
+      <section className="process section" id="processo">
+        <div className="section-eyebrow">Processo · quatro etapas, sem mistério</div>
+        <h2 className="section-title">
+          Como a gente
+          <br />
+          <em>trabalha.</em>
+        </h2>
+        <div className="process-list">
+          {steps.map((s) => (
+            <div className="step" key={s.num}>
+              <div className="step__num">{s.num}</div>
+              <div className="step__title">{s.title}</div>
+              <p className="step__desc">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="voice" id="voz">
+        <div className="voice__inner">
+          <div className="section-eyebrow">Como a gente fala</div>
+          <h2 className="section-title">
+            Sem jargão. Sem
+            <br />
+            <em>sinergia.</em> Sem 360°.
+          </h2>
+          <div className="voice-grid">
+            <div className="voice-col bad">
+              <div className="voice-col__label bad">— Evitamos</div>
+              <div className="voice-col__list">
+                <div className="voice-col__item">Soluções de comunicação visual sob medida</div>
+                <div className="voice-col__item">Potencializamos sua marca no mercado</div>
+                <div className="voice-col__item">Entregáveis com qualidade premium</div>
+                <div className="voice-col__item">Estratégia 360° de comunicação</div>
+              </div>
+            </div>
+            <div className="voice-col good">
+              <div className="voice-col__label good">+ Preferimos</div>
+              <div className="voice-col__list">
+                <div className="voice-col__item">Logos, sites e vídeos pra quem está começando</div>
+                <div className="voice-col__item">Fazemos seu negócio aparecer melhor</div>
+                <div className="voice-col__item">O que combinamos, no prazo, bem feito</div>
+                <div className="voice-col__item">Identidade, site e redes — tudo conversando entre si</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t bg-background" role="contentinfo">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center space-y-4">
-            <p className="text-lg font-semibold text-foreground">
-              Lumma Labs • Automação • Inteligência Artificial • Atendimento
-            </p>
-            <p className="text-sm text-muted-foreground">
-              © 2025 Lumma Labs. Todos os direitos reservados.
-            </p>
+      <section className="cta-block" id="contato">
+        <div className="cta-block__inner">
+          <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
+          <h2 className="cta-title">
+            Tem um negócio
+            <br />
+            pra <em>iluminar?</em>
+          </h2>
+          <p className="cta-sub">
+            Conta um pouco do que você precisa. A gente lê tudo e responde em até 1 dia útil.
+          </p>
+          <div className="cta-row">
+            <a className="btn btn-dark" href="mailto:oi@lummalabs.com.br">
+              oi@lummalabs.com.br
+            </a>
+            <a
+              className="btn btn-ghost-ink"
+              href="https://wa.me/5511974613761"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp · (11) 97461 3761
+            </a>
           </div>
+        </div>
+        <Sparkle className="cta-block__sparkle-bg" />
+      </section>
+
+      <footer className="site-footer">
+        <div className="site-footer__inner">
+          <div className="site-footer__big">
+            A luz na medida
+            <br />
+            <em>certa.</em>
+          </div>
+          <div>
+            <h4>Estúdio</h4>
+            <ul>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#processo">Processo</a></li>
+              <li><a href="#manifesto">Manifesto</a></li>
+              <li><a href="#voz">Como falamos</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contato</h4>
+            <ul>
+              <li><a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a></li>
+              <li>
+                <a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">
+                  (11) 97461 3761
+                </a>
+              </li>
+              <li><a href="https://lummalabs.com.br">lummalabs.com.br</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Onde</h4>
+            <ul>
+              <li>Brasil · remoto</li>
+              <li>Atende em todo lugar</li>
+            </ul>
+          </div>
+        </div>
+        <div className="site-footer__bottom">
+          <span>© Lumma · 2026 · lummalabs.com.br</span>
+          <span>Feito com calma</span>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
