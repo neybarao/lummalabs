@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Animations from "./animations";
 
 const SPARKLE_PATH =
   "M45.7 360.4C19.8 350.8 0 327.7 0 300C0 272.3 19.8 249.2 45.7 239.6L48.3 238.7C138 209 209 138 238.7 48.3C247.7 21.1 271.4 0 300 0C328.6 0 352.3 21.1 361.3 48.3C391 138 462 209 551.8 238.7L554.3 239.6C580.2 249.2 600 272.3 600 300C600 327.7 580.2 350.8 554.3 360.4L551.8 361.3C462 391 391 462 361.3 551.7C352.3 578.9 328.6 600 300 600C271.4 600 247.7 578.9 238.7 551.7C209 462 138 391 48.3 361.3L45.7 360.4Z";
@@ -76,6 +77,7 @@ const steps = [
 export default function Home() {
   return (
     <>
+      <Animations />
       <header className="site-header" id="top">
         <a className="site-header__logo" href="#top">
           <Image

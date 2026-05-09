@@ -51,13 +51,10 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Header --------------------------------------------- */
 .site-header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  position: relative;
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px 40px;
-  background: rgba(245, 241, 234, 0.78);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-soft);
+  background: var(--soft-linen);
 }
 .site-header__logo { display: inline-flex; align-items: center; gap: 10px; }
 .site-header__logo-img { height: 64px; width: auto; }
@@ -78,7 +75,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Hero ---------------------------------------------- */
 .hero {
   background: var(--soft-linen);
-  padding: 84px 16px 16px;
+  padding: 0 16px 16px;
 }
 .hero__card {
   position: relative;
@@ -86,7 +83,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--soft-linen);
   border-radius: 28px;
   padding: clamp(48px, 8vw, 120px) clamp(32px, 6vw, 96px);
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 116px);
   display: flex;
   align-items: center;
   overflow: hidden;
