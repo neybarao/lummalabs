@@ -106,7 +106,7 @@ export default function Home() {
               na sua <em>marca.</em>
             </h1>
             <p className="hero-sub">
-              Design, multimídia e comunicação pra negócios pequenos que querem ser vistos como o que realmente são.
+              Design, multimídia e comunicação pra negócios pequenos que querem ser vistos como o que realmente&nbsp;são.
             </p>
             <div className="hero-cta-row">
               <a className="btn btn-primary" href="#contato">Começar uma conversa</a>

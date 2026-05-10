@@ -18,28 +18,34 @@ export default function Animations() {
         ease,
       });
 
-      gsap.from(".hero-headline", {
-        y: 50,
-        opacity: 0,
-        duration: 1.1,
-        ease,
-        delay: 0.15,
-      });
-      gsap.from(".hero-sub", {
-        y: 24,
-        opacity: 0,
-        duration: 0.9,
-        delay: 0.4,
-        ease,
-      });
-      gsap.from(".hero-cta-row > *", {
-        y: 20,
-        opacity: 0,
-        duration: 0.7,
-        delay: 0.6,
-        stagger: 0.08,
-        ease,
-      });
+      const heroTl = gsap.timeline({ delay: 0.15 });
+      heroTl
+        .from(".hero-headline", {
+          y: 50,
+          opacity: 0,
+          duration: 1.1,
+          ease,
+        })
+        .from(
+          ".hero-sub",
+          { y: 24, opacity: 0, duration: 0.9, ease },
+          "-=0.7",
+        )
+        .fromTo(
+          ".hero-cta-row .btn",
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.08,
+            ease,
+            onComplete: () => {
+              gsap.set(".hero-cta-row .btn", { clearProps: "all" });
+            },
+          },
+          "-=0.5",
+        );
 
       gsap.utils.toArray<HTMLElement>(".section-eyebrow").forEach((el) => {
         gsap.from(el, {
