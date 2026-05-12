@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "dom-to-svg": "^0.12.2",
     "gsap": "^3.15.0",
+    "html-to-image": "^1.11.13",
     "next": "16.0.3",
     "react": "19.2.0",
     "react-dom": "19.2.0"
