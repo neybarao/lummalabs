@@ -14,7 +14,7 @@ export default function Animations() {
       const ease = "power3.out";
 
       gsap.from(".site-header", {
-        y: -20,
+        y: -12,
         opacity: 0,
         duration: 0.7,
         ease,
@@ -23,19 +23,19 @@ export default function Animations() {
       const heroTl = gsap.timeline({ delay: 0.15 });
       heroTl
         .from(".hero-headline", {
-          y: 50,
+          y: 32,
           opacity: 0,
           duration: 1.1,
           ease,
         })
         .from(
           ".hero-sub",
-          { y: 24, opacity: 0, duration: 0.9, ease },
+          { y: 16, opacity: 0, duration: 0.9, ease },
           "-=0.7",
         )
         .fromTo(
           ".hero-cta-row .btn",
-          { y: 20, opacity: 0 },
+          { y: 12, opacity: 0 },
           {
             y: 0,
             opacity: 1,
@@ -51,7 +51,7 @@ export default function Animations() {
 
       gsap.utils.toArray<HTMLElement>(".section-eyebrow").forEach((el) => {
         gsap.from(el, {
-          y: 16,
+          y: 10,
           opacity: 0,
           duration: 0.6,
           ease,
@@ -61,7 +61,7 @@ export default function Animations() {
 
       gsap.utils.toArray<HTMLElement>(".section-title, .cta-title").forEach((el) => {
         gsap.from(el, {
-          y: 40,
+          y: 24,
           opacity: 0,
           duration: 0.9,
           ease,
@@ -71,21 +71,21 @@ export default function Animations() {
 
       gsap.from(".manifesto-text", {
         opacity: 0,
-        y: 40,
+        y: 24,
         duration: 1.0,
         ease,
         scrollTrigger: { trigger: ".manifesto", start: "top 70%" },
       });
       gsap.to(".manifesto-sparkle", {
         rotate: 360,
-        duration: 80,
+        duration: 140,
         ease: "none",
         repeat: -1,
       });
 
       gsap.utils.toArray<HTMLElement>(".service").forEach((el) => {
         gsap.from(el, {
-          y: 30,
+          y: 18,
           opacity: 0,
           duration: 0.7,
           ease,
@@ -94,7 +94,7 @@ export default function Animations() {
       });
 
       gsap.from(".process-list .step", {
-        y: 30,
+        y: 18,
         opacity: 0,
         duration: 0.7,
         stagger: 0.1,
@@ -103,7 +103,7 @@ export default function Animations() {
       });
       gsap.utils.toArray<HTMLElement>(".step__num").forEach((el) => {
         gsap.from(el, {
-          scale: 0.85,
+          scale: 0.92,
           duration: 0.9,
           ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 85%" },
@@ -112,7 +112,7 @@ export default function Animations() {
 
       gsap.from(".voice-col", {
         opacity: 0,
-        y: 24,
+        y: 14,
         duration: 0.8,
         stagger: 0.12,
         ease,
@@ -121,7 +121,7 @@ export default function Animations() {
 
       gsap.from(".cta-block__inner > *", {
         opacity: 0,
-        y: 30,
+        y: 18,
         stagger: 0.08,
         duration: 0.7,
         ease,
@@ -129,13 +129,13 @@ export default function Animations() {
       });
       gsap.to(".cta-block__sparkle", {
         rotate: -360,
-        duration: 100,
+        duration: 160,
         ease: "none",
         repeat: -1,
       });
       gsap.to(".hero__sparkle", {
         rotate: 360,
-        duration: 120,
+        duration: 200,
         ease: "none",
         repeat: -1,
       });
@@ -152,30 +152,24 @@ export default function Animations() {
       const cleanups: Array<() => void> = [];
       document.querySelectorAll<HTMLElement>(".btn").forEach((btn) => {
         const enter = () =>
-          gsap.to(btn, { y: -2, scale: 1.02, duration: 0.25, ease: "power2.out" });
+          gsap.to(btn, { y: -1, duration: 0.25, ease: "power2.out" });
         const leave = () =>
-          gsap.to(btn, { y: 0, scale: 1, duration: 0.25, ease: "power2.out" });
+          gsap.to(btn, { y: 0, duration: 0.25, ease: "power2.out" });
         const down = () =>
-          gsap.to(btn, { y: 1, scale: 0.98, duration: 0.1, ease: "power2.out" });
-        const up = () =>
-          gsap.to(btn, { y: -2, scale: 1.02, duration: 0.18, ease: "power2.out" });
+          gsap.to(btn, { y: 0, duration: 0.08, ease: "power2.out" });
         btn.addEventListener("mouseenter", enter);
         btn.addEventListener("mouseleave", leave);
         btn.addEventListener("focus", enter);
         btn.addEventListener("blur", leave);
         btn.addEventListener("mousedown", down);
-        btn.addEventListener("mouseup", up);
-        btn.addEventListener("touchstart", down, { passive: true });
-        btn.addEventListener("touchend", leave);
+        btn.addEventListener("mouseup", enter);
         cleanups.push(() => {
           btn.removeEventListener("mouseenter", enter);
           btn.removeEventListener("mouseleave", leave);
           btn.removeEventListener("focus", enter);
           btn.removeEventListener("blur", leave);
           btn.removeEventListener("mousedown", down);
-          btn.removeEventListener("mouseup", up);
-          btn.removeEventListener("touchstart", down);
-          btn.removeEventListener("touchend", leave);
+          btn.removeEventListener("mouseup", enter);
         });
       });
 

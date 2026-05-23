@@ -107,7 +107,7 @@ a { color: inherit; text-decoration: none; }
   width: clamp(320px, 52vw, 720px);
   height: clamp(320px, 52vw, 720px);
   color: var(--lumma-glow);
-  opacity: 0.08;
+  opacity: 0.06;
   pointer-events: none;
 }
 .hero__meta {
@@ -181,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 .manifesto-text em { font-style: italic; }
 .manifesto-sparkle {
   position: absolute; right: -80px; bottom: -80px; width: 380px; height: 380px;
-  color: var(--lumma-glow); opacity: 0.25; pointer-events: none;
+  color: var(--lumma-glow); opacity: 0.18; pointer-events: none;
 }
 .manifesto-sig {
   margin-top: 56px;
@@ -227,10 +227,10 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--border-soft);
 }
 .step__num {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(96px, 12vw, 168px);
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(80px, 9vw, 128px);
   line-height: 0.9;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   color: var(--lumma-glow);
 }
 .step__body { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
@@ -258,10 +258,10 @@ a { color: inherit; text-decoration: none; }
 .voice-col__list { display: flex; flex-direction: column; gap: 14px; }
 .voice-col__item { font-size: 16px; line-height: 1.5; }
 .voice-col.bad .voice-col__item {
-  color: rgba(245, 241, 234, 0.7);
+  color: rgba(245, 241, 234, 0.62);
   text-decoration: line-through;
   text-decoration-color: var(--spark);
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1.5px;
   text-decoration-skip-ink: none;
 }
 .voice-col.good .voice-col__item { color: var(--soft-linen); font-weight: 500; }
