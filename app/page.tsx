@@ -75,6 +75,24 @@ const steps = [
   },
 ];
 
+const audiences = [
+  {
+    num: "01",
+    title: "Você tá começando agora",
+    desc: "Tem produto ou serviço, mas ainda não tem marca de verdade. Não quer começar com logo no Canva e site de template. Quer começar certo.",
+  },
+  {
+    num: "02",
+    title: "Você já existe, mas a marca não acompanha",
+    desc: "Seu negócio cresceu mais rápido que sua identidade visual. Cada peça parece de uma empresa diferente. Tá na hora de organizar.",
+  },
+  {
+    num: "03",
+    title: "Você quer parecer maior do que é hoje",
+    desc: "Sabe que o cliente decide em segundos pela aparência. Quer transmitir confiança antes mesmo de abrir a boca pra vender.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -119,6 +137,21 @@ export default function Home() {
               <a className="btn btn-ghost-linen" href="#como-trabalhamos">Ver como trabalhamos</a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="para-quem section" id="para-quem">
+        <div className="section-eyebrow">Para quem · três perfis que a gente atende bem</div>
+        <h2 className="section-title">A Lumma faz sentido pra você <em>se…</em></h2>
+        <p className="section-lead">A gente não atende todo mundo. Trabalha bem com quem se reconhece aqui.</p>
+        <div className="para-quem-grid">
+          {audiences.map((a) => (
+            <div className="audience" key={a.num}>
+              <div className="audience__num">{a.num}</div>
+              <h3 className="audience__title">{a.title}</h3>
+              <p className="audience__desc">{a.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
