@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-10T00:00:00.000Z",
+  "title": "Design System: Lumma",
+  "extensions": {
+    "colorMeta": {
+      "glow": {
+        "role": "primary",
+        "displayName": "Lumma Glow",
+        "canonical": "#F2A65A",
+        "tonalRamp": ["#3D1F00", "#7A4F22", "#A36728", "#C8853F", "#F2A65A", "#F8D5A8", "#FBE6C8", "#FDF4E8"]
+      },
+      "deep-ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#131211",
+        "tonalRamp": ["#0A0A0A", "#131211", "#1F1E1C", "#2C2B28", "#3A3A40", "#5C6677", "#9CA0A8", "#C9C2B3"]
+      },
+      "soft-linen": {
+        "role": "neutral",
+        "displayName": "Soft Linen",
+        "canonical": "#F5F1EA",
+        "tonalRamp": ["#3A3A40", "#5C6677", "#9CA0A8", "#C9C2B3", "#E8E2D6", "#F5F1EA", "#FAF8F4", "#FDFCFA"]
+      },
+      "cool-slate": {
+        "role": "neutral",
+        "displayName": "Cool Slate",
+        "canonical": "#5C6677",
+        "tonalRamp": ["#1F242E", "#2B313D", "#3A4250", "#4A5363", "#5C6677", "#828B9B", "#A8AEBA", "#CCD0D8"]
+      },
+      "spark": {
+        "role": "tertiary",
+        "displayName": "Spark",
+        "canonical": "#E94E3B",
+        "tonalRamp": ["#4A1A12", "#751E14", "#9A2E20", "#C03A2A", "#E94E3B", "#F08679", "#F6B5AD", "#FCE3DE"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. Fraunces 600, italic 'em' on the emotional word." },
+      "headline": { "displayName": "Section Headline", "purpose": "Title of every section. Closes in italic glow." },
+      "manifesto": { "displayName": "Manifesto", "purpose": "Long-form running voice in the ink manifesto section. Lighter weight than headline." },
+      "lead": { "displayName": "Lead", "purpose": "Hero sub, paragraph openers. text-wrap: pretty." },
+      "eyebrow": { "displayName": "Eyebrow", "purpose": "Kicker above every section title. One per section, deliberate." },
+      "mono": { "displayName": "Mono", "purpose": "Metadata (numbers, dates, footer chrome, agenda labels)." }
+    },
+    "shadows": [
+      { "name": "page-float", "value": "0 12px 32px rgba(19,18,17,0.12)", "purpose": "A4 proposal pages over neutral-200 (proposta only)." },
+      { "name": "toolbar-lift", "value": "0 12px 32px rgba(19,18,17,0.18)", "purpose": "Sticky toolbar on proposta route." },
+      { "name": "copy-chip", "value": "0 4px 12px rgba(19,18,17,0.12)", "purpose": "Floating Copy SVG button on proposta." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default deceleration for state transitions and reveals." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Balanced curve for paired entrances/exits." },
+      { "name": "gsap-power3", "value": "power3.out", "purpose": "Primary entrance easing across all GSAP reveals." },
+      { "name": "dur-fast", "value": "140ms", "purpose": "Smallest interaction feedback." },
+      { "name": "dur-base", "value": "220ms", "purpose": "Hover transitions, color shifts." },
+      { "name": "dur-slow", "value": "420ms", "purpose": "Section entrances paired with stagger." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "880px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Carries the brand CTA. The only button that ships the glow.",
+      "html": "<button class=\"ds-btn-primary\">Começar uma conversa</button>",
+      "css": ".ds-btn-primary { background: #F2A65A; color: #131211; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 15px; padding: 14px 22px; border-radius: 12px; border: 1px solid transparent; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #F8D5A8; } .ds-btn-primary:focus-visible { outline: 2px solid #F2A65A; outline-offset: 4px; border-radius: 999px; }"
+    },
+    {
+      "name": "Ghost Linen Button",
+      "kind": "button",
+      "refersTo": "button-ghost-linen",
+      "description": "Secondary CTA on dark backgrounds (hero card).",
+      "html": "<button class=\"ds-btn-ghost-linen\">Ver serviços</button>",
+      "css": ".ds-btn-ghost-linen { background: transparent; color: #F5F1EA; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 15px; padding: 14px 22px; border-radius: 12px; border: 1px solid rgba(245, 241, 234, 0.3); cursor: pointer; transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-ghost-linen:hover { background: rgba(245, 241, 234, 0.06); } .ds-btn-ghost-linen:focus-visible { outline: 2px solid #F2A65A; outline-offset: 4px; border-radius: 999px; }"
+    },
+    {
+      "name": "Nav CTA Pill",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Persistent header CTA, the only pill-shaped button in the system.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#contato\">Conversar</a>",
+      "css": ".ds-nav-cta { background: #131211; color: #F5F1EA; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 14px; padding: 10px 16px; border-radius: 999px; text-decoration: none; transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-cta:hover { background: #C8853F; } .ds-nav-cta:focus-visible { outline: 2px solid #F2A65A; outline-offset: 4px; border-radius: 999px; }"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "description": "Editorial row used for services and any other 'a list of things, bem feitas' pattern.",
+      "html": "<div class=\"ds-service\"><div class=\"ds-service__num\">01</div><div class=\"ds-service__name\">Identidade<br/>visual</div><div class=\"ds-service__desc\">Logo, paleta, tipografia e regras de uso. A base sobre a qual tudo o mais se apoia.</div><div class=\"ds-service__weeks\">4 a 6 semanas</div></div>",
+      "css": ".ds-service { display: grid; grid-template-columns: 80px 1fr 2fr 1fr; gap: 32px; align-items: baseline; padding: 36px 16px; border-bottom: 1px solid #E8E2D6; background: transparent; transition: background 220ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-service:hover { background: #FAF8F4; } .ds-service:hover .ds-service__num { color: #C8853F; } .ds-service__num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #5C6677; } .ds-service__name { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 32px; letter-spacing: -0.01em; line-height: 1.05; color: #131211; } .ds-service__desc { font-family: Inter, sans-serif; font-size: 16px; line-height: 1.55; color: #3A3A40; } .ds-service__weeks { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5C6677; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "description": "Eyebrow + Fraunces headline closing in italic glow. The grammar of every section.",
+      "html": "<header class=\"ds-section-head\"><div class=\"ds-eyebrow\">Serviços · seis coisas, bem feitas</div><h2 class=\"ds-title\">O que a gente <em>faz.</em></h2></header>",
+      "css": ".ds-section-head { display: flex; flex-direction: column; gap: 16px; } .ds-eyebrow { font-family: Inter, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C6677; } .ds-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(40px, 6vw, 80px); line-height: 1.02; letter-spacing: -0.018em; color: #131211; margin: 0; } .ds-title em { font-style: italic; font-weight: 500; color: #C8853F; }"
+    },
+    {
+      "name": "Hero Card",
+      "kind": "custom",
+      "description": "Dark rounded slab that holds the headline. The signature shape of the landing.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero__card\"><h1 class=\"ds-hero__headline\">A luz que falta<br/>na sua <em>marca.</em></h1></div></section>",
+      "css": ".ds-hero { background: #F5F1EA; padding: 0 16px 16px; } .ds-hero__card { background: #131211; color: #F5F1EA; border-radius: 28px; padding: clamp(48px, 8vw, 120px) clamp(32px, 6vw, 96px); min-height: calc(100vh - 116px); display: flex; align-items: flex-end; justify-content: flex-start; overflow: hidden; } .ds-hero__headline { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(50px, 9vw, 137px); line-height: 0.96; letter-spacing: -0.025em; color: #F5F1EA; margin: 0; max-width: 1200px; } .ds-hero__headline em { font-style: italic; font-weight: 500; color: #F2A65A; }"
+    },
+    {
+      "name": "Voice Comparison Grid",
+      "kind": "custom",
+      "description": "Two-column 'evitamos / preferimos' grid. The brand's voice-as-design.",
+      "html": "<div class=\"ds-voice\"><div class=\"ds-voice__col ds-voice__col--bad\"><div class=\"ds-voice__label ds-voice__label--bad\">— Evitamos</div><div class=\"ds-voice__item\">Estratégia 360° de comunicação</div></div><div class=\"ds-voice__col\"><div class=\"ds-voice__label ds-voice__label--good\">+ Preferimos</div><div class=\"ds-voice__item ds-voice__item--good\">Identidade, site e redes, tudo conversando entre si</div></div></div>",
+      "css": ".ds-voice { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(245, 241, 234, 0.12); border-radius: 16px; overflow: hidden; background: #131211; color: #F5F1EA; } .ds-voice__col { padding: 32px; } .ds-voice__col + .ds-voice__col { border-left: 1px solid rgba(245, 241, 234, 0.12); } .ds-voice__label { font-family: Inter, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 24px; } .ds-voice__label--bad { color: #E94E3B; } .ds-voice__label--good { color: #F2A65A; } .ds-voice__item { font-size: 16px; line-height: 1.5; color: rgba(245, 241, 234, 0.55); text-decoration: line-through; text-decoration-color: #E94E3B; text-decoration-thickness: 1px; } .ds-voice__item--good { color: #F5F1EA; font-weight: 500; text-decoration: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A luz na medida certa.",
+    "overview": "Lumma é um estúdio pequeno comunicando-se com negócios pequenos, em português brasileiro, com a calma de quem cobra hora cheia. Cada decisão visual prova um único ponto: pequeno não é amador. A serifa display é enorme. O fundo é linen quente, nunca branco-tela. O glow âmbar carrega 100% do peso de identidade e só aparece onde precisa pesar. O ritmo entre seções é generoso, sem pressa, sem hype.",
+    "keyCharacteristics": [
+      "Linen quente como default, não branco-tela.",
+      "Glow âmbar como única assinatura cromática.",
+      "Display serif italic conduz a emoção; mono pequeno conduz o metadado.",
+      "Sparkle de quatro pontas como signo, nunca decoração.",
+      "Ritmo: muito branco entre seções, condensado dentro de cada uma."
+    ],
+    "rules": [
+      { "name": "The Linen Default Rule", "body": "Onde houver fundo claro, o fundo é Soft Linen (#F5F1EA). Nunca branco puro. Nem em modal, popover ou PDF print.", "section": "colors" },
+      { "name": "The Glow Scarcity Rule", "body": "Glow é o verbo da marca. Aparece em pontos onde a marca está dizendo algo: CTA primário, italic de seção, sparkle, link de revelação.", "section": "colors" },
+      { "name": "The One-Saturated-Color Rule", "body": "A paleta tem uma cor saturada (glow) e um auxiliar de alerta (spark). Qualquer terceira cor saturada é drift.", "section": "colors" },
+      { "name": "The Italic-as-Verb Rule", "body": "Italic Fraunces é reservada para a palavra que carrega a emoção da frase. Em linen recebe glow-700; em ink recebe glow.", "section": "typography" },
+      { "name": "The Eyebrow Earns Its Place Rule", "body": "Toda seção tem um eyebrow, único, com função de kicker editorial. Não há eyebrows aninhados ou decorativos.", "section": "typography" },
+      { "name": "The Widow Defense Rule", "body": "Hero sub usa text-wrap: pretty e &nbsp; entre as duas últimas palavras.", "section": "typography" },
+      { "name": "The No-Shadow Site Rule", "body": "No site cliente, nenhum elemento usa box-shadow. Hierarquia vem de bloco de cor ou radius.", "section": "elevation" },
+      { "name": "The Linen Floats Above Ink Rule", "body": "Quando uma seção escura aparece, o radius 28px deixa o linen aparecer em volta, criando profundidade sem sombra.", "section": "elevation" },
+      { "name": "The Sparkle Says Lumma Rule", "body": "Sparkle aparece em três lugares no site (hero ink, manifesto, CTA), nunca como bullet, separador ou decoração de seção qualquer.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar Soft Linen (#F5F1EA) como fundo padrão. Branco puro nunca.",
+      "Do reservar o glow âmbar para os pontos onde a marca está dizendo algo (CTA, italic, sparkle, link conceitual).",
+      "Do fechar headlines com Fraunces italic na palavra que carrega a emoção.",
+      "Do escrever copy em português brasileiro coloquial.",
+      "Do dar tempo ao conteúdo respirar: 120 a 140px de padding vertical entre seções no desktop.",
+      "Do preservar prefers-reduced-motion: reduce cortando todas as animações GSAP.",
+      "Do garantir :focus-visible em todo elemento interativo.",
+      "Do marcar viúvas tipográficas com text-wrap: pretty e &nbsp; estratégico."
+    ],
+    "donts": [
+      "Don't usar 'sinergia', 'soluções de comunicação visual sob medida', 'estratégia 360°', 'potencializamos sua marca', 'entregáveis premium'.",
+      "Don't cair em SaaS corporativo frio (navy + branco + sans grotesco + 3D isométrico + cards iguais).",
+      "Don't cair em editorial-magazine genérico (drop cap + broadsheet grid + Cormorant). A voz é estúdio brasileiro próximo.",
+      "Don't usar dark mode default ou monospace em corpo de texto.",
+      "Don't usar border-left/right >1px como acento colorido.",
+      "Don't usar gradiente em texto.",
+      "Don't introduzir uma terceira cor saturada.",
+      "Don't usar box-shadow no site cliente.",
+      "Don't animar propriedades de layout (padding, width, margin).",
+      "Don't usar emoji rocket, 'vamos revolucionar', contadores animados, 'trusted by' com logos cinza, métricas-hero gigantes.",
+      "Don't escrever copy em inglês corporativo."
+    ]
+  }
+}
