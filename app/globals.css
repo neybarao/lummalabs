@@ -530,6 +530,12 @@ a { color: inherit; text-decoration: none; }
   margin-top: var(--space-6);
 }
 
+.services-cta {
+  margin-top: var(--space-16);
+  display: flex;
+  justify-content: flex-start;
+}
+
 /* ---------- Mobile ------------------------------------------- */
 @media (max-width: 880px) {
   .para-quem-grid { grid-template-columns: 1fr; gap: var(--space-4); }
@@ -550,6 +556,7 @@ a { color: inherit; text-decoration: none; }
   .service:hover { padding-left: 12px; padding-right: 12px; }
   .service__desc, .service__deliverables { grid-column: 2; }
   .services-grid { margin-top: 40px; }
+  .services-cta { margin-top: var(--space-10); }
   .step { grid-template-columns: 100px 1fr; gap: 20px; padding: 36px 0; }
   .step__num { font-size: 80px; }
   .step__body { gap: 8px; }

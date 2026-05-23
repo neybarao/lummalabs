@@ -16,39 +16,33 @@ function Sparkle({ className, style }: { className?: string; style?: React.CSSPr
 const services = [
   {
     num: "01",
-    name: ["Identidade", "visual"],
-    desc: "Logo, paleta, tipografia e regras de uso. A base sobre a qual tudo o mais se apoia. Trabalhamos próximo, com 2 a 3 rodadas de revisão.",
-    deliverables: ["logo principal · variações", "guia de marca · arquivos abertos", "4 a 6 semanas"],
+    name: ["Marca"],
+    desc: "Quando seu negócio precisa de uma identidade que diga quem você é antes de você falar. Não é só um logo bonito — é um sistema visual que aguenta o seu crescimento.",
+    deliverables: ["logo · paleta · tipografia", "versões e variações · manual de marca"],
   },
   {
     num: "02",
-    name: ["Design"],
-    desc: "Cardápio, embalagem, sinalização, material impresso, peças avulsas. Levamos a identidade pra dentro de cada detalhe da operação.",
-    deliverables: ["arte final pra impressão", "versões editáveis · social", "1 a 4 semanas"],
+    name: ["Design", "system"],
+    desc: "Quando você quer parar de inventar a roda toda vez que precisa de uma peça nova. Botões, cards, banners, posts — tudo derivado das mesmas regras. Você cresce sem perder consistência.",
+    deliverables: ["tokens visuais · componentes", "templates · documentação"],
   },
   {
     num: "03",
-    name: ["Redes", "sociais"],
-    desc: "Templates de feed, story e carrossel. Tom de voz, cronograma editorial e instruções claras pra você ou pra quem cuidar das redes.",
-    deliverables: ["10 a 20 templates", "guia editorial", "2 a 3 semanas"],
+    name: ["Brand", "system"],
+    desc: "Quando a marca precisa funcionar em mais lugares do que só o logo no site. Define como ela se comporta em cada contexto: tom de voz, fotografia, ilustração, copy, embalagem.",
+    deliverables: ["tom de voz · pilares de conteúdo", "diretrizes visuais · guia de aplicação"],
   },
   {
     num: "04",
-    name: ["Websites"],
-    desc: "Site institucional, landing page ou loja simples. Carrega rápido, fácil de atualizar, claro pra quem chega. Nada de plugin que ninguém entende.",
-    deliverables: ["design · código · publicação", "treinamento de uso", "3 a 8 semanas"],
+    name: ["Site"],
+    desc: "Quando seu site não comunica o valor do que você vende. Faz o trabalho que um vendedor bom faria: explica, convence, agenda. Rápido, responsivo, fácil de você mesmo atualizar.",
+    deliverables: ["institucional · landing · one-page", "design · código · publicação"],
   },
   {
     num: "05",
-    name: ["Aplicativos"],
-    desc: "Quando o seu negócio precisa de algo mais que um site. Desenho UX/UI, protótipos navegáveis e acompanhamento técnico até o app no ar.",
-    deliverables: ["protótipo · design system", "handoff de desenvolvimento", "8 a 16 semanas"],
-  },
-  {
-    num: "06",
-    name: ["Manual de", "comunicação"],
-    desc: "Define como a empresa fala — interna e externamente. Quem comunica, o quê, quando e por qual canal. Tom de voz, mensagens-chave, regras de crise e fluxos para time, clientes e imprensa.",
-    deliverables: ["tom de voz · vocabulário", "matriz quem-fala-o-quê", "playbooks por canal", "2 a 4 semanas"],
+    name: ["Instagram"],
+    desc: "Quando seu Instagram é onde o cliente decide se confia em você. Grid coerente, templates que você replica, linha editorial clara. Sua presença pronta pra começar a postar.",
+    deliverables: ["grid · templates · stories", "highlights · linha editorial inicial"],
   },
 ];
 
@@ -170,8 +164,9 @@ export default function Home() {
       </section>
 
       <section className="services section" id="servicos">
-        <div className="section-eyebrow">Serviços · seis coisas, bem feitas</div>
+        <div className="section-eyebrow">Serviços · cinco entregas, bem feitas</div>
         <h2 className="section-title">O que a gente <em>faz.</em></h2>
+        <p className="section-lead">Cinco entregas que cobrem tudo que um pequeno negócio precisa pra ter presença visual e comunicação consistente. Você contrata a peça que falta — ou o pacote completo.</p>
         <div className="services-grid">
           {services.map((s) => (
             <div className="service" key={s.num}>
@@ -195,6 +190,9 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="services-cta">
+          <a className="btn btn-dark" href="#contato">Quero entender o melhor pacote pra mim</a>
         </div>
       </section>
 
