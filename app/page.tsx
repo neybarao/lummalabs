@@ -107,16 +107,16 @@ export default function Home() {
           <div className="hero__meta">001 · 2026 · Estúdio independente · Brasil</div>
           <div className="hero__inner">
             <h1 className="hero-headline">
-              A luz que falta
+              Design e comunicação
               <br />
-              na sua <em>marca.</em>
+              <em>sem</em> rodeios.
             </h1>
             <p className="hero-sub">
-              Design, multimídia e comunicação pra negócios pequenos que querem ser vistos como o que realmente&nbsp;são.
+              Criamos marca, design system, site e Instagram com qualidade de grande empresa — pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
             </p>
             <div className="hero-cta-row">
-              <a className="btn btn-primary" href="#contato">Começar uma conversa</a>
-              <a className="btn btn-ghost-linen" href="#servicos">Ver serviços</a>
+              <a className="btn btn-primary" href="#contato">Começar um projeto</a>
+              <a className="btn btn-ghost-linen" href="#como-trabalhamos">Ver como trabalhamos</a>
             </div>
           </div>
         </div>
