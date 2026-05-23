@@ -127,9 +127,15 @@ export default function Animations() {
         ease,
         scrollTrigger: { trigger: ".cta-block", start: "top 75%" },
       });
-      gsap.to(".cta-block__sparkle-bg", {
+      gsap.to(".cta-block__sparkle", {
         rotate: -360,
         duration: 100,
+        ease: "none",
+        repeat: -1,
+      });
+      gsap.to(".hero__sparkle", {
+        rotate: 360,
+        duration: 120,
         ease: "none",
         repeat: -1,
       });
@@ -146,18 +152,30 @@ export default function Animations() {
       const cleanups: Array<() => void> = [];
       document.querySelectorAll<HTMLElement>(".btn").forEach((btn) => {
         const enter = () =>
-          gsap.to(btn, { scale: 1.03, duration: 0.25, ease: "power2.out" });
+          gsap.to(btn, { y: -2, scale: 1.02, duration: 0.25, ease: "power2.out" });
         const leave = () =>
-          gsap.to(btn, { scale: 1, duration: 0.25, ease: "power2.out" });
+          gsap.to(btn, { y: 0, scale: 1, duration: 0.25, ease: "power2.out" });
+        const down = () =>
+          gsap.to(btn, { y: 1, scale: 0.98, duration: 0.1, ease: "power2.out" });
+        const up = () =>
+          gsap.to(btn, { y: -2, scale: 1.02, duration: 0.18, ease: "power2.out" });
         btn.addEventListener("mouseenter", enter);
         btn.addEventListener("mouseleave", leave);
         btn.addEventListener("focus", enter);
         btn.addEventListener("blur", leave);
+        btn.addEventListener("mousedown", down);
+        btn.addEventListener("mouseup", up);
+        btn.addEventListener("touchstart", down, { passive: true });
+        btn.addEventListener("touchend", leave);
         cleanups.push(() => {
           btn.removeEventListener("mouseenter", enter);
           btn.removeEventListener("mouseleave", leave);
           btn.removeEventListener("focus", enter);
           btn.removeEventListener("blur", leave);
+          btn.removeEventListener("mousedown", down);
+          btn.removeEventListener("mouseup", up);
+          btn.removeEventListener("touchstart", down);
+          btn.removeEventListener("touchend", leave);
         });
       });
 

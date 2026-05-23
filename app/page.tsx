@@ -100,6 +100,8 @@ export default function Home() {
       <main>
       <section className="hero">
         <div className="hero__card">
+          <Sparkle className="hero__sparkle" />
+          <div className="hero__meta">001 · 2026 · Estúdio independente · Brasil</div>
           <div className="hero__inner">
             <h1 className="hero-headline">
               A luz que falta
@@ -171,8 +173,10 @@ export default function Home() {
           {steps.map((s) => (
             <div className="step" key={s.num}>
               <div className="step__num">{s.num}</div>
-              <div className="step__title">{s.title}</div>
-              <p className="step__desc">{s.desc}</p>
+              <div className="step__body">
+                <div className="step__title">{s.title}</div>
+                <p className="step__desc">{s.desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -211,30 +215,34 @@ export default function Home() {
 
       <section className="cta-block" id="contato">
         <div className="cta-block__inner">
-          <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
-          <h2 className="cta-title">
-            Tem um negócio
-            <br />
-            pra <em>iluminar?</em>
-          </h2>
-          <p className="cta-sub">
-            Conta um pouco do que você precisa. A gente lê tudo e responde em até 1 dia útil.
-          </p>
-          <div className="cta-row">
-            <a className="btn btn-dark" href="mailto:oi@lummalabs.com.br">
-              oi@lummalabs.com.br
-            </a>
-            <a
-              className="btn btn-ghost-ink"
-              href="https://wa.me/5511974613761"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp · (11) 97461 3761
-            </a>
+          <div className="cta-block__copy">
+            <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
+            <h2 className="cta-title">
+              Tem um negócio
+              <br />
+              pra <em>iluminar?</em>
+            </h2>
+            <p className="cta-sub">
+              Conta um pouco do que você precisa. A gente lê tudo e responde em até 1 dia útil.
+            </p>
+            <div className="cta-row">
+              <a className="btn btn-dark" href="mailto:oi@lummalabs.com.br">
+                oi@lummalabs.com.br
+              </a>
+              <a
+                className="btn btn-ghost-ink"
+                href="https://wa.me/5511974613761"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp · (11) 97461 3761
+              </a>
+            </div>
+          </div>
+          <div className="cta-block__art" aria-hidden="true">
+            <Sparkle className="cta-block__sparkle" />
           </div>
         </div>
-        <Sparkle className="cta-block__sparkle-bg" />
       </section>
       </main>
 
