@@ -46,26 +46,32 @@ const services = [
   },
 ];
 
-const steps = [
+const formats = [
   {
-    num: "01",
-    title: "Conversa",
-    desc: "30 minutos pra entender o seu negócio, o que está funcionando e o que está te incomodando. Sem compromisso, sem vendinha.",
+    label: "Formato A",
+    title: "Escopo fechado",
+    tagline: "Pra quando você já sabe o que precisa.",
+    intro: "Você chega com a lista pronta: \"preciso de marca + site + 30 posts pra Instagram\". A gente define entregas, prazos e preço antes de começar. Você sabe exatamente o que vai receber e quando.",
+    bullets: [
+      "Briefing e proposta em até 5 dias úteis",
+      "Entregas em etapas validadas",
+      "Preço fechado · prazo fechado",
+      "Ideal pra projetos com começo, meio e fim claros",
+    ],
+    fit: "Marca nova, site institucional, abertura de Instagram, lançamento de produto.",
   },
   {
-    num: "02",
-    title: "Proposta",
-    desc: "Mandamos um documento com escopo, prazo e investimento. Tudo escrito em português, sem letra miúda.",
-  },
-  {
-    num: "03",
-    title: "Trabalho",
-    desc: "Você acompanha o que está sendo feito em pontos de checagem combinados. Revisões claras, sem ping-pong.",
-  },
-  {
-    num: "04",
-    title: "Entrega",
-    desc: "No prazo combinado, com a qualidade prometida. Arquivos abertos, treinamento curto e um período de ajuste pós-entrega.",
+    label: "Formato B",
+    title: "Escopo aberto",
+    tagline: "Pra quando você precisa, mas não sabe exatamente o quê.",
+    intro: "A gente conversa, entende o contexto, e vai construindo junto. Trabalho contínuo em blocos mensais. Você usa o tempo da equipe pra o que for mais urgente naquela semana.",
+    bullets: [
+      "Bloco mensal de horas",
+      "Você prioriza o que entra na fila",
+      "Flexível pra ajustar conforme o negócio muda",
+      "Ideal pra quem precisa de design recorrente",
+    ],
+    fit: "Posts semanais, evolução de marca, materiais de venda, suporte criativo contínuo.",
   },
 ];
 
@@ -196,23 +202,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process section" id="processo">
-        <div className="section-eyebrow">Processo · quatro etapas, sem mistério</div>
+      <section className="como-trabalhamos section" id="como-trabalhamos">
+        <div className="section-eyebrow">Como trabalhamos · dois formatos</div>
         <h2 className="section-title">
-          Como a gente
+          Dois formatos. Você escolhe
           <br />
-          <em>trabalha.</em>
+          o que <em>combina.</em>
         </h2>
-        <div className="process-list">
-          {steps.map((s) => (
-            <div className="step" key={s.num}>
-              <div className="step__num">{s.num}</div>
-              <div className="step__body">
-                <div className="step__title">{s.title}</div>
-                <p className="step__desc">{s.desc}</p>
-              </div>
+        <p className="section-lead">Não existe um jeito certo de tocar um projeto. Existe o jeito certo pro momento do seu negócio.</p>
+        <div className="formats-grid">
+          {formats.map((f) => (
+            <div className="format" key={f.title}>
+              <div className="format__label">{f.label}</div>
+              <h3 className="format__title">{f.title}</h3>
+              <p className="format__tagline"><em>{f.tagline}</em></p>
+              <p className="format__intro">{f.intro}</p>
+              <div className="format__bullets-label">Como funciona:</div>
+              <ul className="format__bullets">
+                {f.bullets.map((b, i) => <li key={i}>{b}</li>)}
+              </ul>
+              <p className="format__fit"><strong>Quando faz sentido:</strong> {f.fit}</p>
             </div>
           ))}
+        </div>
+        <div className="services-cta">
+          <a className="btn btn-dark" href="#contato">Quero conversar sobre o formato ideal</a>
         </div>
       </section>
 
