@@ -92,8 +92,9 @@ export default function Home() {
         </a>
         <nav className="site-nav" aria-label="Principal">
           <a href="#servicos">Serviços</a>
-          <a href="#processo">Processo</a>
+          <a href="#como-trabalhamos">Como trabalhamos</a>
           <a href="#manifesto">Manifesto</a>
+          <a href="#faq">FAQ</a>
           <a className="nav-cta" href="#contato">Conversar</a>
         </nav>
         <MobileNav />

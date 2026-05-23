@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const LINKS = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#processo", label: "Processo" },
+  { href: "#como-trabalhamos", label: "Como trabalhamos" },
   { href: "#manifesto", label: "Manifesto" },
-  { href: "#voz", label: "Como falamos" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 export default function MobileNav() {
