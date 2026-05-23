@@ -8,7 +8,9 @@ export default function Animations() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
       const ease = "power3.out";
 
       gsap.from(".site-header", {
@@ -103,7 +105,7 @@ export default function Animations() {
         gsap.from(el, {
           scale: 0.85,
           duration: 0.9,
-          ease: "back.out(1.6)",
+          ease: "power3.out",
           scrollTrigger: { trigger: el, start: "top 85%" },
         });
       });
@@ -141,7 +143,7 @@ export default function Animations() {
         scrollTrigger: { trigger: ".site-footer", start: "top 85%" },
       });
 
-      const btnHandlers: Array<{ el: HTMLElement; enter: () => void; leave: () => void }> = [];
+      const cleanups: Array<() => void> = [];
       document.querySelectorAll<HTMLElement>(".btn").forEach((btn) => {
         const enter = () =>
           gsap.to(btn, { scale: 1.03, duration: 0.25, ease: "power2.out" });
@@ -149,10 +151,16 @@ export default function Animations() {
           gsap.to(btn, { scale: 1, duration: 0.25, ease: "power2.out" });
         btn.addEventListener("mouseenter", enter);
         btn.addEventListener("mouseleave", leave);
-        btnHandlers.push({ el: btn, enter, leave });
+        btn.addEventListener("focus", enter);
+        btn.addEventListener("blur", leave);
+        cleanups.push(() => {
+          btn.removeEventListener("mouseenter", enter);
+          btn.removeEventListener("mouseleave", leave);
+          btn.removeEventListener("focus", enter);
+          btn.removeEventListener("blur", leave);
+        });
       });
 
-      const navLinks: Array<{ el: HTMLElement; enter: () => void; leave: () => void }> = [];
       document
         .querySelectorAll<HTMLElement>(".site-nav a:not(.nav-cta)")
         .forEach((link) => {
@@ -162,22 +170,22 @@ export default function Animations() {
             gsap.to(link, { y: 0, duration: 0.2, ease: "power2.out" });
           link.addEventListener("mouseenter", enter);
           link.addEventListener("mouseleave", leave);
-          navLinks.push({ el: link, enter, leave });
+          link.addEventListener("focus", enter);
+          link.addEventListener("blur", leave);
+          cleanups.push(() => {
+            link.removeEventListener("mouseenter", enter);
+            link.removeEventListener("mouseleave", leave);
+            link.removeEventListener("focus", enter);
+            link.removeEventListener("blur", leave);
+          });
         });
 
       return () => {
-        btnHandlers.forEach(({ el, enter, leave }) => {
-          el.removeEventListener("mouseenter", enter);
-          el.removeEventListener("mouseleave", leave);
-        });
-        navLinks.forEach(({ el, enter, leave }) => {
-          el.removeEventListener("mouseenter", enter);
-          el.removeEventListener("mouseleave", leave);
-        });
+        cleanups.forEach((fn) => fn());
       };
     });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return null;

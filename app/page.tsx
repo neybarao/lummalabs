@@ -89,7 +89,7 @@ export default function Home() {
             priority
           />
         </a>
-        <nav className="site-nav">
+        <nav className="site-nav" aria-label="Principal">
           <a href="#servicos">Serviços</a>
           <a href="#processo">Processo</a>
           <a href="#manifesto">Manifesto</a>
@@ -97,6 +97,7 @@ export default function Home() {
         </nav>
       </header>
 
+      <main>
       <section className="hero">
         <div className="hero__card">
           <div className="hero__inner">
@@ -235,6 +236,7 @@ export default function Home() {
         </div>
         <Sparkle className="cta-block__sparkle-bg" />
       </section>
+      </main>
 
       <footer className="site-footer">
         <div className="site-footer__inner">
