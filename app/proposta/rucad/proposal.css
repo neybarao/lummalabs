@@ -90,14 +90,14 @@
   font-size: 56px; line-height: 1.0; letter-spacing: -0.022em;
   margin: 0;
 }
-.prop-h1 em { font-style: italic; font-weight: 500; color: var(--glow-700); }
+.prop-h1 em { font-style: normal; font-weight: 100; font-variation-settings: "wdth" 125, "wght" 100; color: var(--glow-700); }
 .prop-page--ink .prop-h1 em { color: var(--lumma-glow); }
 .prop-h2 {
   font-family: var(--font-display); font-weight: 600;
   font-size: 36px; line-height: 1.05; letter-spacing: -0.014em;
   margin: 0 0 16px;
 }
-.prop-h2 em { font-style: italic; font-weight: 500; color: var(--glow-700); }
+.prop-h2 em { font-style: normal; font-weight: 100; font-variation-settings: "wdth" 125, "wght" 100; color: var(--glow-700); }
 .prop-page--ink .prop-h2 em { color: var(--lumma-glow); }
 .prop-h3 {
   font-family: var(--font-body); font-weight: 600;

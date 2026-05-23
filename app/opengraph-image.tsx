@@ -46,7 +46,7 @@ export default function OpengraphImage() {
           <span>A luz que falta</span>
           <span>
             na sua{" "}
-            <span style={{ color: "#F2A65A", fontStyle: "italic" }}>marca.</span>
+            <span style={{ color: "#F2A65A", fontWeight: 100, fontVariationSettings: '"wdth" 125, "wght" 100' }}>marca.</span>
           </span>
         </div>
         <div

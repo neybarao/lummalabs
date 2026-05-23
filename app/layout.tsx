@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const GA_ID = "G-3G49BN4MCD";
 
-const fraunces = Fraunces({
+const archivo = Archivo({
   variable: "--font-display",
   subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
+  axes: ["wdth"],
 });
 
 const inter = Inter({
@@ -143,7 +143,7 @@ gtag('config', '${GA_ID}');`}
         </Script>
       </head>
       <body
-        className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+        className={`${archivo.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
         {children}
         <script
