@@ -367,10 +367,12 @@ export default function Home() {
           <div>
             <h4>Estúdio</h4>
             <ul>
+              <li><a href="#para-quem">Para quem</a></li>
               <li><a href="#servicos">Serviços</a></li>
-              <li><a href="#processo">Processo</a></li>
+              <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
               <li><a href="#manifesto">Manifesto</a></li>
               <li><a href="#voz">Como falamos</a></li>
+              <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
           <div>
