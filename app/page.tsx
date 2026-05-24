@@ -93,6 +93,37 @@ const audiences = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Quanto custa um projeto na Lumma?",
+    a: "Depende do escopo. Marca completa começa em uma faixa, site em outra, pacote completo em outra. Na primeira conversa a gente entende o que você precisa e te manda uma proposta direta — sem joguinho de \"fale com nosso consultor\".",
+  },
+  {
+    q: "Em quanto tempo fica pronto?",
+    a: "Marca: 2 a 4 semanas. Site: 3 a 6 semanas. Pacote completo (marca + site + Instagram): 6 a 10 semanas. Sempre dependendo do escopo e da agilidade nas validações. A gente é rápido, mas não corta caminho em decisão importante.",
+  },
+  {
+    q: "Eu preciso já ter marca pra contratar?",
+    a: "Não. Se você ainda não tem, a gente começa por aí. Se já tem mas quer revisar, a gente avalia se faz sentido manter, refinar ou refazer.",
+  },
+  {
+    q: "E se eu só quiser uma coisa (só o site, só o Instagram)?",
+    a: "Pode. A gente trabalha tanto com pacote quanto com peça solta. Mas vale conversar — às vezes o que você acha que precisa não é exatamente o que vai resolver.",
+  },
+  {
+    q: "Depois de pronto, eu mexo sozinho?",
+    a: "Sim. Entregamos os arquivos editáveis, templates prontos pra você replicar, e documentação clara. Você não fica refém da gente pra postar um story.",
+  },
+  {
+    q: "Vocês atendem fora do Brasil?",
+    a: "Sim. Trabalhamos remoto, com clientes em qualquer lugar. Reuniões por chamada de vídeo, entregas digitais.",
+  },
+  {
+    q: "Como começa?",
+    a: "Você manda uma mensagem contando o que precisa. A gente marca uma conversa de 30 minutos pra entender o contexto. Em até 5 dias úteis, você recebe uma proposta. Se fechar, começamos na semana seguinte.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -264,6 +295,25 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="faq section" id="faq">
+        <div className="section-eyebrow">FAQ · perguntas que mais aparecem</div>
+        <h2 className="section-title">
+          Antes de começar, é normal ter <em>dúvida.</em>
+        </h2>
+        <p className="section-lead">As perguntas que mais aparecem — respondidas como a gente responderia numa conversa.</p>
+        <div className="faq-list">
+          {faqs.map((item, i) => (
+            <details className="faq__item" key={i} {...(i === 0 ? { open: true } : {})}>
+              <summary className="faq__q">
+                <span>{item.q}</span>
+                <span className="faq__icon" aria-hidden="true">+</span>
+              </summary>
+              <p className="faq__a">{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
