@@ -136,8 +136,16 @@ export default function Home() {
             alt="Lumma"
             width={274}
             height={64}
-            className="site-header__logo-img"
+            className="site-header__logo-img site-header__logo-img--dark"
             priority
+          />
+          <Image
+            src="/Logo-lumma-header-light.svg"
+            alt=""
+            width={140}
+            height={60}
+            className="site-header__logo-img site-header__logo-img--light"
+            aria-hidden="true"
           />
         </a>
         <nav className="site-nav" aria-label="Principal">
@@ -152,7 +160,7 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero__card">
-            <Sparkle className="hero__sparkle" />
+            {/* <Sparkle className="hero__sparkle" /> */}
             <div className="hero__grid">
               <div className="hero__lead">
                 <h1 className="hero-headline">
