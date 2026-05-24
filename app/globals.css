@@ -799,8 +799,6 @@ a { color: inherit; text-decoration: none; }
   .formats-grid { grid-template-columns: 1fr; gap: var(--space-4); }
   .format { padding: var(--space-8); }
   .step { grid-template-columns: 100px 1fr; gap: 20px; padding: 36px 0; }
-  .step__num { font-size: 80px; }
-  .step__body { gap: 8px; }
   .voice-grid { grid-template-columns: 1fr; }
   .voice-col + .voice-col { border-left: none; border-top: 1px solid var(--border-inverse); }
   .cta-block { padding: 96px 20px; }
