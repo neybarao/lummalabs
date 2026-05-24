@@ -131,6 +131,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <Script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
