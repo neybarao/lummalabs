@@ -158,12 +158,18 @@ export default function Home() {
       <section className="manifesto" id="manifesto">
         <div className="manifesto__inner">
           <div className="section-eyebrow">Manifesto</div>
-          <p className="manifesto-text">
-            A gente acredita que <em>pequeno não é sinônimo de amador.</em>{" "}
-            Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global.{" "}
-            Que comunicação clara é direito do cliente, não luxo.{" "}
-            Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser bem feito.</strong>
-          </p>
+          <h2 className="section-title manifesto-title">
+            A Lumma existe pra quem cresce
+            <br />
+            no <em>detalhe.</em>
+          </h2>
+          <div className="manifesto-text">
+            <p>A gente acredita que <em>pequeno não é sinônimo de amador.</em></p>
+            <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser feito bem.</strong></p>
+            <p>A gente acredita em fazer com clareza. Em entregar o que foi combinado, no prazo combinado, com a qualidade prometida. Em explicar decisões em vez de impor. Em dizer &ldquo;não sei&rdquo; quando é o caso, e &ldquo;isso aqui pode ficar melhor&rdquo; quando vemos uma chance.</p>
+            <p>A gente acredita que ousadia criativa não está em chocar — está em encontrar a solução certa, mesmo quando ela não é óbvia. Que minimalismo não é frieza, é respeito pelo olhar de quem vê. Que humanidade não é falta de rigor, é o que faz o rigor valer a pena.</p>
+          </div>
+          <p className="manifesto-closing"><em>Iluminar é tornar possível ver.</em></p>
           <div className="manifesto-sig">— Lumma · v. 1.0 · 2026</div>
         </div>
         <Sparkle className="manifesto-sparkle" />
