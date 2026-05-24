@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 import Animations from "./animations";
 import MobileNav from "./mobile-nav";
 import ContactForm from "./contact-form";
@@ -398,16 +400,21 @@ export default function Home() {
             <ul>
               <li>
                 <a href="https://www.instagram.com/lummalabs" target="_blank" rel="noopener noreferrer">
-                  Instagram
+                  <FaInstagram aria-hidden="true" />
+                  <span>Instagram</span>
                 </a>
               </li>
               <li>
                 <a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">
-                  WhatsApp
+                  <FaWhatsapp aria-hidden="true" />
+                  <span>WhatsApp</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
+                <a href="mailto:oi@lummalabs.com.br">
+                  <HiOutlineEnvelope aria-hidden="true" />
+                  <span>oi@lummalabs.com.br</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -415,27 +422,22 @@ export default function Home() {
 
         <div className="site-footer__bottom">
           <div>
-            <span className="site-footer__bottom-label">© Lumma · 2026</span>
-            <span className="site-footer__bottom-value">Feito com calma</span>
-          </div>
-          <div>
-            <span className="site-footer__bottom-label">Instagram</span>
-            <a
-              className="site-footer__bottom-value"
-              href="https://www.instagram.com/lummalabs"
-              target="_blank"
-              rel="noopener noreferrer"
+            <svg
+              className="site-footer__bottom-mark"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
-              @lummalabs
-            </a>
-          </div>
-          <div>
-            <span className="site-footer__bottom-label">Onde</span>
-            <span className="site-footer__bottom-value">Brasil · remoto</span>
-          </div>
-          <div>
-            <span className="site-footer__bottom-label">Tipografia</span>
-            <span className="site-footer__bottom-value">Archivo · Inter · JetBrains Mono</span>
+              <path
+                d="M1.82895 14.4168C0.792645 14.0333 0 13.108 0 11.9999C0 10.892 0.792645 9.96673 1.82895 9.58319L1.93073 9.54757C5.51924 8.35849 8.35829 5.52019 9.54726 1.93052C9.90657 0.844692 10.8565 0 11.9992 0C13.1435 0 14.0934 0.844692 14.4527 1.93052C15.6417 5.52019 18.4807 8.35849 22.0693 9.54757L22.171 9.58319C23.2073 9.96673 24 10.892 24 11.9999C24 13.108 23.2073 14.0333 22.171 14.4168L22.0693 14.4524C18.4807 15.6414 15.6417 18.4798 14.4527 22.0695C14.0934 23.1554 13.1435 24 11.9992 24C10.8565 24 9.90657 23.1554 9.54726 22.0695C8.35829 18.4798 5.51924 15.6414 1.93073 14.4524L1.82895 14.4168Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span className="site-footer__bottom-label">© Lumma · 2026</span>
+            <span className="site-footer__bottom-value">Feito com IA e talento humano</span>
           </div>
         </div>
       </footer>
