@@ -195,7 +195,7 @@ export default function Home() {
             </h2>
             <div className="manifesto-text">
               <p>A gente acredita que <em>pequeno não é sinônimo de amador.</em></p>
-              <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser feito bem.</strong></p>
+              <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <em>merece ser bem feito.</em></p>
               <p>A gente acredita em fazer com clareza. Em entregar o que foi combinado, no prazo combinado, com a qualidade prometida. Em explicar decisões em vez de impor. Em dizer &ldquo;não sei&rdquo; quando é o caso, e &ldquo;isso aqui pode ficar melhor&rdquo; quando vemos uma chance.</p>
               <p>A gente acredita que ousadia criativa não está em chocar, está em encontrar a solução certa, mesmo quando ela não é óbvia. Que minimalismo não é frieza, é respeito pelo olhar de quem vê. Que humanidade não é falta de rigor, é o que faz o rigor valer a pena.</p>
             </div>
