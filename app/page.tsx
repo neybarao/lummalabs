@@ -112,10 +112,6 @@ const faqs = [
     a: "Pode. A gente trabalha tanto com pacote quanto com peça solta. Mas vale conversar, às vezes o que você acha que precisa não é exatamente o que vai resolver.",
   },
   {
-    q: "Depois de pronto, eu mexo sozinho?",
-    a: "Sim. Entregamos os arquivos editáveis, templates prontos pra você replicar, e documentação clara. Você não fica refém da gente pra postar um story.",
-  },
-  {
     q: "Vocês atendem fora do Brasil?",
     a: "Sim. Trabalhamos remoto, com clientes em qualquer lugar. Reuniões por chamada de vídeo, entregas digitais.",
   },
