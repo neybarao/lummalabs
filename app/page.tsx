@@ -18,13 +18,13 @@ const services = [
   {
     num: "01",
     name: ["Marca"],
-    desc: "Quando seu negócio precisa de uma identidade que diga quem você é antes de você falar. Não é só um logo bonito — é um sistema visual que aguenta o seu crescimento.",
+    desc: "Quando seu negócio precisa de uma identidade que diga quem você é antes de você falar. Não é só um logo bonito, é um sistema visual que aguenta o seu crescimento.",
     deliverables: ["logo · paleta · tipografia", "versões e variações · manual de marca"],
   },
   {
     num: "02",
     name: ["Design", "system"],
-    desc: "Quando você quer parar de inventar a roda toda vez que precisa de uma peça nova. Botões, cards, banners, posts — tudo derivado das mesmas regras. Você cresce sem perder consistência.",
+    desc: "Quando você quer parar de inventar a roda toda vez que precisa de uma peça nova. Botões, cards, banners, posts, tudo derivado das mesmas regras. Você cresce sem perder consistência.",
     deliverables: ["tokens visuais · componentes", "templates · documentação"],
   },
   {
@@ -97,7 +97,7 @@ const audiences = [
 const faqs = [
   {
     q: "Quanto custa um projeto na Lumma?",
-    a: "Depende do escopo. Marca completa começa em uma faixa, site em outra, pacote completo em outra. Na primeira conversa a gente entende o que você precisa e te manda uma proposta direta — sem joguinho de \"fale com nosso consultor\".",
+    a: "Depende do escopo. Marca completa começa em uma faixa, site em outra, pacote completo em outra. Na primeira conversa a gente entende o que você precisa e te manda uma proposta direta, sem joguinho de \"fale com nosso consultor\".",
   },
   {
     q: "Em quanto tempo fica pronto?",
@@ -109,7 +109,7 @@ const faqs = [
   },
   {
     q: "E se eu só quiser uma coisa (só o site, só o Instagram)?",
-    a: "Pode. A gente trabalha tanto com pacote quanto com peça solta. Mas vale conversar — às vezes o que você acha que precisa não é exatamente o que vai resolver.",
+    a: "Pode. A gente trabalha tanto com pacote quanto com peça solta. Mas vale conversar, às vezes o que você acha que precisa não é exatamente o que vai resolver.",
   },
   {
     q: "Depois de pronto, eu mexo sozinho?",
@@ -151,210 +151,208 @@ export default function Home() {
       </header>
 
       <main>
-      <section className="hero">
-        <div className="hero__card">
-          <Sparkle className="hero__sparkle" />
-          <div className="hero__meta">001 · 2026 · Estúdio independente · Brasil</div>
-          <div className="hero__inner">
-            <h1 className="hero-headline">
-              Design e comunicação
-              <br />
-              <em>sem</em> rodeios.
-            </h1>
-            <p className="hero-sub">
-              Criamos marca, design system, site e Instagram com qualidade de grande empresa — pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
-            </p>
-            <div className="hero-cta-row">
-              <a className="btn btn-primary" href="#contato">Começar um projeto</a>
-              <a className="btn btn-ghost-linen" href="#como-trabalhamos">Ver como trabalhamos</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="para-quem section" id="para-quem">
-        <div className="section-eyebrow">Para quem · três perfis que a gente atende bem</div>
-        <h2 className="section-title">A Lumma faz sentido pra você <em>se…</em></h2>
-        <p className="section-lead">A gente não atende todo mundo. Trabalha bem com quem se reconhece aqui.</p>
-        <div className="para-quem-grid">
-          {audiences.map((a) => (
-            <div className="audience" key={a.num}>
-              <div className="audience__num">{a.num}</div>
-              <h3 className="audience__title">{a.title}</h3>
-              <p className="audience__desc">{a.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="manifesto" id="manifesto">
-        <div className="manifesto__inner">
-          <div className="section-eyebrow">Manifesto</div>
-          <h2 className="section-title manifesto-title">
-            A Lumma existe pra quem cresce
-            <br />
-            no <em>detalhe.</em>
-          </h2>
-          <div className="manifesto-text">
-            <p>A gente acredita que <em>pequeno não é sinônimo de amador.</em></p>
-            <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser feito bem.</strong></p>
-            <p>A gente acredita em fazer com clareza. Em entregar o que foi combinado, no prazo combinado, com a qualidade prometida. Em explicar decisões em vez de impor. Em dizer &ldquo;não sei&rdquo; quando é o caso, e &ldquo;isso aqui pode ficar melhor&rdquo; quando vemos uma chance.</p>
-            <p>A gente acredita que ousadia criativa não está em chocar — está em encontrar a solução certa, mesmo quando ela não é óbvia. Que minimalismo não é frieza, é respeito pelo olhar de quem vê. Que humanidade não é falta de rigor, é o que faz o rigor valer a pena.</p>
-          </div>
-          <p className="manifesto-closing"><em>Iluminar é tornar possível ver.</em></p>
-          <div className="manifesto-sig">— Lumma · v. 1.0 · 2026</div>
-        </div>
-        <Sparkle className="manifesto-sparkle" />
-      </section>
-
-      <section className="services section" id="servicos">
-        <div className="section-eyebrow">Serviços · cinco entregas, bem feitas</div>
-        <h2 className="section-title">O que a gente <em>faz.</em></h2>
-        <p className="section-lead">Cinco entregas que cobrem tudo que um pequeno negócio precisa pra ter presença visual e comunicação consistente. Você contrata a peça que falta — ou o pacote completo.</p>
-        <div className="services-grid">
-          {services.map((s) => (
-            <div className="service" key={s.num}>
-              <div className="service__num">{s.num}</div>
-              <div className="service__name">
-                {s.name.map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < s.name.length - 1 && <br />}
-                  </span>
-                ))}
-              </div>
-              <div className="service__desc">{s.desc}</div>
-              <div className="service__deliverables">
-                {s.deliverables.map((d, i) => (
-                  <span key={i}>
-                    {d}
-                    {i < s.deliverables.length - 1 && <br />}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="services-cta">
-          <a className="btn btn-dark" href="#contato">Quero entender o melhor pacote pra mim</a>
-        </div>
-      </section>
-
-      <section className="como-trabalhamos section" id="como-trabalhamos">
-        <div className="section-eyebrow">Como trabalhamos · dois formatos</div>
-        <h2 className="section-title">
-          Dois formatos. Você escolhe
-          <br />
-          o que <em>combina.</em>
-        </h2>
-        <p className="section-lead">Não existe um jeito certo de tocar um projeto. Existe o jeito certo pro momento do seu negócio.</p>
-        <div className="formats-grid">
-          {formats.map((f) => (
-            <div className="format" key={f.title}>
-              <div className="format__label">{f.label}</div>
-              <h3 className="format__title">{f.title}</h3>
-              <p className="format__tagline"><em>{f.tagline}</em></p>
-              <p className="format__intro">{f.intro}</p>
-              <div className="format__bullets-label">Como funciona:</div>
-              <ul className="format__bullets">
-                {f.bullets.map((b, i) => <li key={i}>{b}</li>)}
-              </ul>
-              <p className="format__fit"><strong>Quando faz sentido:</strong> {f.fit}</p>
-            </div>
-          ))}
-        </div>
-        <div className="services-cta">
-          <a className="btn btn-dark" href="#contato">Quero conversar sobre o formato ideal</a>
-        </div>
-      </section>
-
-      <section className="voice" id="voz">
-        <div className="voice__inner">
-          <div className="section-eyebrow">Como a gente fala</div>
-          <h2 className="section-title">
-            Sem jargão. Sem
-            <br />
-            <em>sinergia.</em> Sem 360°.
-          </h2>
-          <div className="voice-grid">
-            <div className="voice-col bad">
-              <div className="voice-col__label bad">— Evitamos</div>
-              <div className="voice-col__list">
-                <div className="voice-col__item">Soluções de comunicação visual sob medida</div>
-                <div className="voice-col__item">Potencializamos sua marca no mercado</div>
-                <div className="voice-col__item">Entregáveis com qualidade premium</div>
-                <div className="voice-col__item">Estratégia 360° de comunicação</div>
-              </div>
-            </div>
-            <div className="voice-col good">
-              <div className="voice-col__label good">+ Preferimos</div>
-              <div className="voice-col__list">
-                <div className="voice-col__item">Logos, sites e vídeos pra quem está começando</div>
-                <div className="voice-col__item">Fazemos seu negócio aparecer melhor</div>
-                <div className="voice-col__item">O que combinamos, no prazo, bem feito</div>
-                <div className="voice-col__item">Identidade, site e redes — tudo conversando entre si</div>
+        <section className="hero">
+          <div className="hero__card">
+            <Sparkle className="hero__sparkle" />
+            <div className="hero__meta">001 · 2026 · Estúdio independente · Brasil</div>
+            <div className="hero__inner">
+              <h1 className="hero-headline">
+                Design e comunicação
+                <br />
+                <em>sem</em> rodeios.
+              </h1>
+              <p className="hero-sub">
+                Criamos marca, design system, site e Instagram com qualidade de grande empresa, pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
+              </p>
+              <div className="hero-cta-row">
+                <a className="btn btn-primary" href="#contato">Começar um projeto</a>
+                <a className="btn btn-ghost-linen" href="#como-trabalhamos">Ver como trabalhamos</a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="faq section" id="faq">
-        <div className="section-eyebrow">FAQ · perguntas que mais aparecem</div>
-        <h2 className="section-title">
-          Antes de começar, é normal ter <em>dúvida.</em>
-        </h2>
-        <p className="section-lead">As perguntas que mais aparecem — respondidas como a gente responderia numa conversa.</p>
-        <div className="faq-list">
-          {faqs.map((item, i) => (
-            <details className="faq__item" key={i} {...(i === 0 ? { open: true } : {})}>
-              <summary className="faq__q">
-                <span>{item.q}</span>
-                <span className="faq__icon" aria-hidden="true">+</span>
-              </summary>
-              <p className="faq__a">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+        <section className="para-quem section" id="para-quem">
+          <div className="section-eyebrow">Para quem · três perfis que a gente atende bem</div>
+          <h2 className="section-title">A Lumma faz sentido pra você <em>se…</em></h2>
+          <p className="section-lead">A gente não atende todo mundo. Trabalha bem com quem se reconhece aqui.</p>
+          <div className="para-quem-grid">
+            {audiences.map((a) => (
+              <div className="audience" key={a.num}>
+                <div className="audience__num">{a.num}</div>
+                <h3 className="audience__title">{a.title}</h3>
+                <p className="audience__desc">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <section className="cta-block" id="contato">
-        <div className="cta-block__inner">
-          <div className="cta-block__copy">
-            <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
-            <h2 className="cta-title">
-              Vamos
-              <br />
-              <em>começar?</em>
+        <section className="manifesto" id="manifesto">
+          <div className="manifesto__inner">
+            <div className="section-eyebrow">Manifesto</div>
+            <h2 className="section-title manifesto-title">
+              A Lumma existe pra quem cresce no <em>detalhe.</em>
             </h2>
-            <p className="cta-sub">Não precisa ter tudo pronto. Conta o que você precisa e a gente desenha o caminho com você.</p>
+            <div className="manifesto-text">
+              <p>A gente acredita que <em>pequeno não é sinônimo de amador.</em></p>
+              <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <strong>merece ser feito bem.</strong></p>
+              <p>A gente acredita em fazer com clareza. Em entregar o que foi combinado, no prazo combinado, com a qualidade prometida. Em explicar decisões em vez de impor. Em dizer &ldquo;não sei&rdquo; quando é o caso, e &ldquo;isso aqui pode ficar melhor&rdquo; quando vemos uma chance.</p>
+              <p>A gente acredita que ousadia criativa não está em chocar, está em encontrar a solução certa, mesmo quando ela não é óbvia. Que minimalismo não é frieza, é respeito pelo olhar de quem vê. Que humanidade não é falta de rigor, é o que faz o rigor valer a pena.</p>
+            </div>
+            <p className="manifesto-closing"><em>Iluminar é tornar possível ver.</em></p>
+            <div className="manifesto-sig">— Lumma · v. 1.0 · 2026</div>
           </div>
-          <Sparkle className="cta-block__sparkle" />
-        </div>
+          <Sparkle className="manifesto-sparkle" />
+        </section>
 
-        <div className="pillars">
-          <div className="pillar">
-            <h3 className="pillar__title">Resposta em até 24h</h3>
-            <p className="pillar__desc">Mensagem recebida vira conversa marcada. Sem ficar esperando.</p>
+        <section className="services section" id="servicos">
+          <div className="section-eyebrow">Serviços · cinco entregas, bem feitas</div>
+          <h2 className="section-title">O que a gente <em>faz.</em></h2>
+          <p className="section-lead">Cinco entregas que cobrem tudo que um pequeno negócio precisa pra ter presença visual e comunicação consistente. Você contrata a peça que falta, ou o pacote completo.</p>
+          <div className="services-grid">
+            {services.map((s) => (
+              <div className="service" key={s.num}>
+                <div className="service__num">{s.num}</div>
+                <div className="service__name">
+                  {s.name.map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < s.name.length - 1 && <br />}
+                    </span>
+                  ))}
+                </div>
+                <div className="service__desc">{s.desc}</div>
+                <div className="service__deliverables">
+                  {s.deliverables.map((d, i) => (
+                    <span key={i}>
+                      {d}
+                      {i < s.deliverables.length - 1 && <br />}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="pillar">
-            <h3 className="pillar__title">Proposta clara em 5 dias</h3>
-            <p className="pillar__desc">Você sai da primeira conversa sabendo o que vamos fazer, em quanto tempo e por quanto.</p>
+          <div className="services-cta">
+            <a className="btn btn-dark" href="#contato">Quero entender o melhor pacote pra mim</a>
           </div>
-          <div className="pillar">
-            <h3 className="pillar__title">Sem compromisso na conversa</h3>
-            <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem cobrança, sem pressão.</p>
-          </div>
-        </div>
+        </section>
 
-        <ContactForm />
+        <section className="como-trabalhamos section" id="como-trabalhamos">
+          <div className="section-eyebrow">Como trabalhamos · dois formatos</div>
+          <h2 className="section-title">
+            Dois formatos. Você escolhe
+            <br />
+            o que <em>combina.</em>
+          </h2>
+          <p className="section-lead">Não existe um jeito certo de tocar um projeto. Existe o jeito certo pro momento do seu negócio.</p>
+          <div className="formats-grid">
+            {formats.map((f) => (
+              <div className="format" key={f.title}>
+                <div className="format__label">{f.label}</div>
+                <h3 className="format__title">{f.title}</h3>
+                <p className="format__tagline"><em>{f.tagline}</em></p>
+                <p className="format__intro">{f.intro}</p>
+                <div className="format__bullets-label">Como funciona:</div>
+                <ul className="format__bullets">
+                  {f.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+                <p className="format__fit"><strong>Quando faz sentido:</strong> {f.fit}</p>
+              </div>
+            ))}
+          </div>
+          <div className="services-cta">
+            <a className="btn btn-dark" href="#contato">Quero conversar sobre o formato ideal</a>
+          </div>
+        </section>
 
-        <div className="cta-alt">
-          <span>Ou se preferir:</span>
-          <a className="btn btn-ghost-ink" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
-          <a className="btn btn-ghost-ink" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
-        </div>
-      </section>
+        <section className="voice" id="voz">
+          <div className="voice__inner">
+            <div className="section-eyebrow">Como a gente fala</div>
+            <h2 className="section-title">
+              Sem jargão. Sem
+              <br />
+              <em>sinergia.</em> Sem 360°.
+            </h2>
+            <div className="voice-grid">
+              <div className="voice-col bad">
+                <div className="voice-col__label bad">— Evitamos</div>
+                <div className="voice-col__list">
+                  <div className="voice-col__item">Soluções de comunicação visual sob medida</div>
+                  <div className="voice-col__item">Potencializamos sua marca no mercado</div>
+                  <div className="voice-col__item">Entregáveis com qualidade premium</div>
+                  <div className="voice-col__item">Estratégia 360° de comunicação</div>
+                </div>
+              </div>
+              <div className="voice-col good">
+                <div className="voice-col__label good">+ Preferimos</div>
+                <div className="voice-col__list">
+                  <div className="voice-col__item">Logos, sites e vídeos pra quem está começando</div>
+                  <div className="voice-col__item">Fazemos seu negócio aparecer melhor</div>
+                  <div className="voice-col__item">O que combinamos, no prazo, bem feito</div>
+                  <div className="voice-col__item">Identidade, site e redes, tudo conversando entre si</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="faq section" id="faq">
+          <div className="section-eyebrow">FAQ · perguntas que mais aparecem</div>
+          <h2 className="section-title">
+            Antes de começar, é normal ter <em>dúvida.</em>
+          </h2>
+          <p className="section-lead">As perguntas que mais aparecem, respondidas como a gente responderia numa conversa.</p>
+          <div className="faq-list">
+            {faqs.map((item, i) => (
+              <details className="faq__item" key={i} {...(i === 0 ? { open: true } : {})}>
+                <summary className="faq__q">
+                  <span>{item.q}</span>
+                  <span className="faq__icon" aria-hidden="true">+</span>
+                </summary>
+                <p className="faq__a">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section className="cta-block" id="contato">
+          <div className="cta-block__inner">
+            <div className="cta-block__copy">
+              <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
+              <h2 className="cta-title">
+                Vamos
+                <br />
+                <em>começar?</em>
+              </h2>
+              <p className="cta-sub">Não precisa ter tudo pronto. Conta o que você precisa e a gente desenha o caminho com você.</p>
+            </div>
+            <Sparkle className="cta-block__sparkle" />
+          </div>
+
+          <div className="pillars">
+            <div className="pillar">
+              <h3 className="pillar__title">Resposta em até 24h</h3>
+              <p className="pillar__desc">Mensagem recebida vira conversa marcada. Sem ficar esperando.</p>
+            </div>
+            <div className="pillar">
+              <h3 className="pillar__title">Proposta clara em 5 dias</h3>
+              <p className="pillar__desc">Você sai da primeira conversa sabendo o que vamos fazer, em quanto tempo e por quanto.</p>
+            </div>
+            <div className="pillar">
+              <h3 className="pillar__title">Sem compromisso na conversa</h3>
+              <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem cobrança, sem pressão.</p>
+            </div>
+          </div>
+
+          <ContactForm />
+
+          <div className="cta-alt">
+            <span>Ou se preferir:</span>
+            <a className="btn btn-ghost-ink" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
+            <a className="btn btn-ghost-ink" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
+          </div>
+        </section>
       </main>
 
       <footer className="site-footer">
