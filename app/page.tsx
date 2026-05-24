@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Animations from "./animations";
 import MobileNav from "./mobile-nav";
+import ContactForm from "./contact-form";
 
 const SPARKLE_PATH =
   "M45.7 360.4C19.8 350.8 0 327.7 0 300C0 272.3 19.8 249.2 45.7 239.6L48.3 238.7C138 209 209 138 238.7 48.3C247.7 21.1 271.4 0 300 0C328.6 0 352.3 21.1 361.3 48.3C391 138 462 209 551.8 238.7L554.3 239.6C580.2 249.2 600 272.3 600 300C600 327.7 580.2 350.8 554.3 360.4L551.8 361.3C462 391 391 462 361.3 551.7C352.3 578.9 328.6 600 300 600C271.4 600 247.7 578.9 238.7 551.7C209 462 138 391 48.3 361.3L45.7 360.4Z";
@@ -322,30 +323,36 @@ export default function Home() {
           <div className="cta-block__copy">
             <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
             <h2 className="cta-title">
-              Tem um negócio
+              Vamos
               <br />
-              pra <em>iluminar?</em>
+              <em>começar?</em>
             </h2>
-            <p className="cta-sub">
-              Conta um pouco do que você precisa. A gente lê tudo e responde em até 1 dia útil.
-            </p>
-            <div className="cta-row">
-              <a className="btn btn-dark" href="mailto:oi@lummalabs.com.br">
-                oi@lummalabs.com.br
-              </a>
-              <a
-                className="btn btn-ghost-ink"
-                href="https://wa.me/5511974613761"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp · (11) 97461 3761
-              </a>
-            </div>
+            <p className="cta-sub">Não precisa ter tudo pronto. Conta o que você precisa e a gente desenha o caminho com você.</p>
           </div>
-          <div className="cta-block__art" aria-hidden="true">
-            <Sparkle className="cta-block__sparkle" />
+          <Sparkle className="cta-block__sparkle" />
+        </div>
+
+        <div className="pillars">
+          <div className="pillar">
+            <h3 className="pillar__title">Resposta em até 24h</h3>
+            <p className="pillar__desc">Mensagem recebida vira conversa marcada. Sem ficar esperando.</p>
           </div>
+          <div className="pillar">
+            <h3 className="pillar__title">Proposta clara em 5 dias</h3>
+            <p className="pillar__desc">Você sai da primeira conversa sabendo o que vamos fazer, em quanto tempo e por quanto.</p>
+          </div>
+          <div className="pillar">
+            <h3 className="pillar__title">Sem compromisso na conversa</h3>
+            <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem cobrança, sem pressão.</p>
+          </div>
+        </div>
+
+        <ContactForm />
+
+        <div className="cta-alt">
+          <span>Ou se preferir:</span>
+          <a className="btn btn-ghost-ink" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
+          <a className="btn btn-ghost-ink" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
         </div>
       </section>
       </main>
