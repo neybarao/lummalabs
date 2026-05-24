@@ -93,21 +93,50 @@ export default function Animations() {
         });
       });
 
-      gsap.from(".process-list .step", {
+      gsap.utils.toArray<HTMLElement>(".audience").forEach((el) => {
+        gsap.from(el, {
+          y: 18,
+          opacity: 0,
+          duration: 0.7,
+          ease,
+          scrollTrigger: { trigger: el, start: "top 92%" },
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>(".format").forEach((el) => {
+        gsap.from(el, {
+          y: 18,
+          opacity: 0,
+          duration: 0.7,
+          ease,
+          scrollTrigger: { trigger: el, start: "top 90%" },
+        });
+      });
+
+      gsap.from(".faq__item", {
+        y: 12,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.06,
+        ease,
+        scrollTrigger: { trigger: ".faq-list", start: "top 85%" },
+      });
+
+      gsap.from(".pillar", {
+        y: 14,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.08,
+        ease,
+        scrollTrigger: { trigger: ".pillars", start: "top 85%" },
+      });
+
+      gsap.from(".contact-form", {
         y: 18,
         opacity: 0,
-        duration: 0.7,
-        stagger: 0.1,
+        duration: 0.8,
         ease,
-        scrollTrigger: { trigger: ".process-list", start: "top 80%" },
-      });
-      gsap.utils.toArray<HTMLElement>(".step__num").forEach((el) => {
-        gsap.from(el, {
-          scale: 0.92,
-          duration: 0.9,
-          ease: "power3.out",
-          scrollTrigger: { trigger: el, start: "top 85%" },
-        });
+        scrollTrigger: { trigger: ".contact-form", start: "top 85%" },
       });
 
       gsap.from(".voice-col", {
