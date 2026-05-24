@@ -143,7 +143,6 @@ export default function Home() {
         <nav className="site-nav" aria-label="Principal">
           <a href="#servicos">Serviços</a>
           <a href="#como-trabalhamos">Como trabalhamos</a>
-          <a href="#manifesto">Manifesto</a>
           <a href="#faq">FAQ</a>
           <a className="nav-cta" href="#contato">Conversar</a>
         </nav>
@@ -154,20 +153,52 @@ export default function Home() {
         <section className="hero">
           <div className="hero__card">
             <Sparkle className="hero__sparkle" />
-            <div className="hero__meta">001 · 2026 · Estúdio independente · Brasil</div>
-            <div className="hero__inner">
-              <h1 className="hero-headline">
-                Design e comunicação
-                <br />
-                <em>sem</em> rodeios.
-              </h1>
-              <p className="hero-sub">
-                Criamos marca, design system, site e Instagram com qualidade de grande empresa, pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
-              </p>
-              <div className="hero-cta-row">
-                <a className="btn btn-primary" href="#contato">Começar um projeto</a>
-                <a className="btn btn-ghost-linen" href="#como-trabalhamos">Ver como trabalhamos</a>
+            <div className="hero__grid">
+              <div className="hero__lead">
+                <h1 className="hero-headline">
+                  Design e comunicação
+                  <br />
+                  <em>sem</em> rodeios.
+                </h1>
+                <p className="hero-sub">
+                  Criamos marca, design system, site e Instagram com qualidade de grande empresa, pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
+                </p>
+                <div className="hero-cta-row">
+                  <a className="btn btn-primary" href="#contato">Começar um projeto</a>
+                  <a className="btn btn-ghost-ink" href="#como-trabalhamos">Ver como trabalhamos</a>
+                </div>
+                <ul className="hero__tags" aria-label="O que fazemos">
+                  <li>Marca</li>
+                  <li>Design system</li>
+                  <li>Brand system</li>
+                  <li>Site</li>
+                  <li>Instagram</li>
+                </ul>
               </div>
+              <div className="hero__visual">
+                <div className="hero__visual-chip">Conheça a Lumma ✦</div>
+                <div className="hero__visual-frame" role="img" aria-label="Imagem em breve">
+                  <span className="hero__visual-placeholder">Imagem · 1:1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero__mosaic" aria-hidden="true">
+            <div className="hero__mosaic-tile" data-ratio="portrait">
+              <span>Imagem · 3:4</span>
+            </div>
+            <div className="hero__mosaic-tile" data-ratio="square">
+              <span>Imagem · 1:1</span>
+            </div>
+            <div className="hero__mosaic-tile" data-ratio="portrait">
+              <span>Imagem · 3:4</span>
+            </div>
+            <div className="hero__mosaic-tile" data-ratio="square">
+              <span>Imagem · 1:1</span>
+            </div>
+            <div className="hero__mosaic-tile" data-ratio="portrait">
+              <span>Imagem · 3:4</span>
             </div>
           </div>
         </section>
@@ -187,25 +218,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="manifesto" id="manifesto">
-          <div className="manifesto__inner">
-            <div className="section-eyebrow">Manifesto</div>
-            <h2 className="section-title manifesto-title">
-              A Lumma existe pra quem cresce no <em>detalhe.</em>
-            </h2>
-            <div className="manifesto-text">
-              <p>A gente acredita que <em>pequeno não é sinônimo de amador.</em></p>
-              <p>Que o design de um restaurante de bairro pode ser tão refinado quanto o de uma marca global. Que comunicação clara é um direito do cliente, não um luxo. Que iluminar um negócio pequeno com cuidado profissional é trabalho que <em>merece ser bem feito.</em></p>
-              <p>A gente acredita em fazer com clareza. Em entregar o que foi combinado, no prazo combinado, com a qualidade prometida. Em explicar decisões em vez de impor. Em dizer &ldquo;não sei&rdquo; quando é o caso, e &ldquo;isso aqui pode ficar melhor&rdquo; quando vemos uma chance.</p>
-              <p>A gente acredita que ousadia criativa não está em chocar, está em encontrar a solução certa, mesmo quando ela não é óbvia. Que minimalismo não é frieza, é respeito pelo olhar de quem vê. Que humanidade não é falta de rigor, é o que faz o rigor valer a pena.</p>
-            </div>
-            <p className="manifesto-closing"><em>Iluminar é tornar possível ver.</em></p>
-            <div className="manifesto-sig">— Lumma · v. 1.0 · 2026</div>
-          </div>
-          <Sparkle className="manifesto-sparkle" />
-        </section>
-
-        <section className="services section" id="servicos">
+        <section className="services section section--dark" id="servicos">
           <div className="section-eyebrow">Serviços · cinco entregas, bem feitas</div>
           <h2 className="section-title">O que a gente <em>faz.</em></h2>
           <p className="section-lead">Cinco entregas que cobrem tudo que um pequeno negócio precisa pra ter presença visual e comunicação consistente. Você contrata a peça que falta, ou o pacote completo.</p>
@@ -234,7 +247,7 @@ export default function Home() {
             ))}
           </div>
           <div className="services-cta">
-            <a className="btn btn-dark" href="#contato">Quero entender o melhor pacote pra mim</a>
+            <a className="btn btn-primary" href="#contato">Quero entender o melhor pacote pra mim</a>
           </div>
         </section>
 
@@ -356,46 +369,70 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
+        <div className="site-footer__grain" aria-hidden="true" />
         <div className="site-footer__inner">
-          <div className="site-footer__big">
-            A luz na medida
-            <br />
-            <em>certa.</em>
+          <div className="site-footer__lead">
+            <h2 className="site-footer__big">
+              A luz na medida
+              <br />
+              <em>certa.</em>
+            </h2>
           </div>
-          <div>
+
+          <nav className="site-footer__col" aria-label="Estúdio">
             <h4>Estúdio</h4>
             <ul>
               <li><a href="#para-quem">Para quem</a></li>
               <li><a href="#servicos">Serviços</a></li>
               <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
-              <li><a href="#manifesto">Manifesto</a></li>
-              <li><a href="#voz">Como falamos</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
-          </div>
-          <div>
+          </nav>
+
+          <div className="site-footer__col">
             <h4>Contato</h4>
             <ul>
-              <li><a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a></li>
               <li>
-                <a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">
-                  (11) 97461 3761
+                <a href="https://www.instagram.com/lummalabs" target="_blank" rel="noopener noreferrer">
+                  Instagram
                 </a>
               </li>
-              <li><a href="https://lummalabs.com.br">lummalabs.com.br</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Onde</h4>
-            <ul>
-              <li>Brasil · remoto</li>
-              <li>Atende em todo lugar</li>
+              <li>
+                <a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
+              </li>
             </ul>
           </div>
         </div>
+
         <div className="site-footer__bottom">
-          <span>© Lumma · 2026 · lummalabs.com.br</span>
-          <span>Feito com calma</span>
+          <div>
+            <span className="site-footer__bottom-label">© Lumma · 2026</span>
+            <span className="site-footer__bottom-value">Feito com calma</span>
+          </div>
+          <div>
+            <span className="site-footer__bottom-label">Instagram</span>
+            <a
+              className="site-footer__bottom-value"
+              href="https://www.instagram.com/lummalabs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @lummalabs
+            </a>
+          </div>
+          <div>
+            <span className="site-footer__bottom-label">Onde</span>
+            <span className="site-footer__bottom-value">Brasil · remoto</span>
+          </div>
+          <div>
+            <span className="site-footer__bottom-label">Tipografia</span>
+            <span className="site-footer__bottom-value">Archivo · Inter · JetBrains Mono</span>
+          </div>
         </div>
       </footer>
     </>

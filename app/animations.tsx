@@ -69,20 +69,6 @@ export default function Animations() {
         });
       });
 
-      gsap.from(".manifesto-text", {
-        opacity: 0,
-        y: 24,
-        duration: 1.0,
-        ease,
-        scrollTrigger: { trigger: ".manifesto", start: "top 70%" },
-      });
-      gsap.to(".manifesto-sparkle", {
-        rotate: 360,
-        duration: 140,
-        ease: "none",
-        repeat: -1,
-      });
-
       gsap.utils.toArray<HTMLElement>(".service").forEach((el) => {
         gsap.from(el, {
           y: 18,
