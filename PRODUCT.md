@@ -20,7 +20,7 @@ O sub-projeto `/proposta/rucad` é uma ferramenta interna que exporta propostas 
 
 ## Brand Personality
 
-Calma e cuidadosa, editorial e tipográfica, próxima e direta, calorosa. Quatro palavras que andam juntas: a serifa italic grande, o tom linen quente, o glow âmbar e o jeito de escrever ("a gente acredita", "sem ping-pong", "no prazo combinado") são a mesma decisão expressa em quatro lugares diferentes.
+Calma e cuidadosa, editorial e tipográfica, próxima e direta, calorosa. O fundo branco limpo, o accent verde vibrante e o jeito de escrever ("a gente acredita", "sem ping-pong", "no prazo combinado") são a mesma decisão expressa em lugares diferentes.
 
 Voz: primeira pessoa do plural informal brasileira. Frases curtas, vírgula no lugar de travessão, números escritos por extenso quando soa mais humano. Confiança sem hype, autoridade sem jargão. Diz "não sei" quando é o caso.
 
@@ -36,15 +36,15 @@ Voz: primeira pessoa do plural informal brasileira. Frases curtas, vírgula no l
 
 1. **Pequeno não é amador.** Cada decisão visual prova que cuidado profissional cabe em escala pequena. Tipografia grande, ritmo respirado, atenção ao detalhe que costuma ser luxo de marca global.
 2. **Mostrar, não declarar.** O site é o portfólio. Se a gente promete "design refinado", o próprio site precisa entregar refinamento antes da primeira palavra ser lida.
-3. **Calma é uma postura, não uma desculpa.** Animações lentas, eases longos, espaço em branco generoso. Mas sem timidez: a serifa é enorme, o glow é vibrante, a opinião é clara.
+3. **Calma é uma postura, não uma desculpa.** Animações lentas, eases longos, espaço em branco generoso. Mas sem timidez: a tipografia é enorme, o verde é vibrante, a opinião é clara.
 4. **Português de verdade.** Nada de "Solutions for Small Business". Tudo em português brasileiro coloquial, do título do hero até o copy do botão. Quando precisa traduzir um termo técnico, traduz.
-5. **Sparkle como assinatura.** O símbolo da estrela de quatro pontas aparece com intenção (hero, manifesto, CTA), nunca como decoração espalhada. Quando aparece, está dizendo "Lumma".
+5. **Mark como assinatura.** O mark pentagonal com estrela aparece com intenção (hero), nunca como decoração espalhada. Quando aparece, está dizendo "Lumma".
 
 ## Accessibility & Inclusion
 
 WCAG 2.1 AA como mínimo.
 
-- Contraste 4.5:1 para texto corpo, 3:1 para texto grande (≥18pt ou ≥14pt bold). Combinações críticas a verificar: `var(--soft-linen)` sobre `var(--deep-ink)` no hero ink, `var(--neutral-700)` sobre `var(--soft-linen)` no corpo, `var(--cool-slate)` sobre `var(--soft-linen)` em eyebrows e mono small.
+- Contraste 4.5:1 para texto corpo, 3:1 para texto grande (>=18pt ou >=14pt bold). Combinacoes criticas a verificar: `var(--on-dark)` sobre hero dark, `var(--ink)` sobre `var(--paper)`, `var(--ink-2)` sobre `var(--paper)` em texto secundario.
 - Foco visível em todos os elementos interativos, sem `outline: none` sem substituto.
 - `prefers-reduced-motion: reduce` deve cortar as animações GSAP de entrada e o spin contínuo do sparkle do manifesto e do CTA.
 - Navegação por teclado: ordem lógica, skip link opcional para `#contato`, hover states acompanham focus states.
