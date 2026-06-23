@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
-
-const GA_ID = "G-3G49BN4MCD";
+import ConsentBanner from "./consent-banner";
 
 const archivo = Archivo({
   variable: "--font-display",
@@ -125,23 +123,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <Script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
-        </Script>
-      </head>
       <body
         className={`${archivo.variable} ${inter.variable}`}
       >
         {children}
+        <ConsentBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -235,9 +235,9 @@ export default function Home() {
             </div>
             <div className="hero__bottom">
               <h1 className="hero-headline display">
-                Design que dá forma
+                Design de produto que
                 <br />
-                à sua <em>ideia</em>
+                dá forma à sua <em>ideia</em>
                 <span className="ast">✱</span>
               </h1>
               <div className="hero-cta-row">
