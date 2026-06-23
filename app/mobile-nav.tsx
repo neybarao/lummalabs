@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 
 const LINKS = [
   { href: "#servicos", label: "Serviços" },
+  { href: "#por-que", label: "Por que a Lumma" },
   { href: "#como-trabalhamos", label: "Como trabalhamos" },
-  { href: "#manifesto", label: "Manifesto" },
+  { href: "#experiencia", label: "Experiência" },
   { href: "#faq", label: "FAQ" },
 ];
 

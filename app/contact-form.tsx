@@ -6,11 +6,12 @@ import { useState, FormEvent } from "react";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 const NEED_OPTIONS = [
-  "Marca",
+  "Web design e site",
+  "Design de produto (UX/UI)",
+  "Estratégia e estrutura",
+  "Prototipagem",
   "Design system",
-  "Brand system",
-  "Site",
-  "Instagram",
+  "Identidade e marca",
   "Não sei ainda",
   "Outro",
 ];
@@ -71,8 +72,8 @@ export default function ContactForm() {
       </div>
       <div className="contact-form__row">
         <label className="contact-form__field">
-          <span className="contact-form__label">Tipo de negócio</span>
-          <input name="business" type="text" required placeholder="Padaria, terapeuta, atelier…" />
+          <span className="contact-form__label">Empresa e segmento</span>
+          <input name="business" type="text" required placeholder="Nome da empresa, área de atuação" />
         </label>
         <label className="contact-form__field">
           <span className="contact-form__label">O que você precisa?</span>
