@@ -199,8 +199,8 @@ export default function Home() {
           <Image
             src="/Logo-lumma-header.svg"
             alt="Lumma"
-            width={123}
-            height={39}
+            width={101}
+            height={32}
             className="site-header__logo-img"
             priority
           />
@@ -243,7 +243,7 @@ export default function Home() {
                 <a className="btn btn-ghost-light" href="#como-trabalhamos">Ver como trabalhamos</a>
               </div>
             </div>
-            <img className="hero__mark" src="/hero-mark.svg" alt="" aria-hidden="true" width={96} height={94} />
+            <img className="hero__mark" src="/hero-mark.svg" alt="" aria-hidden="true" width={72} height={71} />
           </section>
         </div>
 

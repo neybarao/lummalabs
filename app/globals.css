@@ -189,7 +189,7 @@ img { display: block; max-width: 100%; }
 }
 .hero__mark {
   position: absolute; right: var(--pad-x); bottom: var(--pad-x); z-index: 2;
-  width: 92px; height: auto;
+  width: 72px; height: auto;
   animation: spin-mark 12s linear infinite;
 }
 @keyframes spin-mark { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -263,7 +263,7 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 .why-card {
-  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  border: 1px solid var(--line); border-radius: 24px;
   padding: 36px 32px 40px;
   display: flex; flex-direction: column;
   transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
@@ -344,7 +344,7 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 .method {
-  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  border: 1px solid var(--line); border-radius: 24px;
   padding: 34px 30px 36px;
   display: flex; flex-direction: column;
   transition: border-color var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
@@ -364,10 +364,12 @@ img { display: block; max-width: 100%; }
 .method__bullets { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .method__bullets li {
   position: relative; padding-left: 22px; font-size: 14.5px; line-height: 1.45; color: var(--ink);
+  display: flex; align-items: center;
 }
 .method__bullets li::before {
-  content: ""; position: absolute; left: 0; top: 9px;
+  content: ""; position: absolute; left: 0;
   width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--accent);
+  flex: none;
 }
 .method__fit {
   margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line);
@@ -377,7 +379,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- Experiência (case) ------------------------------- */
 .case { margin-top: 64px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; }
-.case__media { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--paper-2); aspect-ratio: 4 / 3; }
+.case__media { position: relative; overflow: hidden; border-radius: 24px; background: var(--paper-2); }
 .case__media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: transform var(--dur-slow) var(--ease-out), filter var(--dur-slow) var(--ease-out); }
 .case:hover .case__media img { transform: scale(1.03); filter: grayscale(0); }
 .case__meta-tag {
@@ -388,7 +390,7 @@ img { display: block; max-width: 100%; }
 }
 .case__panel {
   background: var(--ink); color: var(--on-dark);
-  border-radius: var(--radius-lg); padding: 40px 36px;
+  border-radius: 24px; padding: 40px 36px;
   display: flex; flex-direction: column; gap: 26px;
 }
 .case__client {
