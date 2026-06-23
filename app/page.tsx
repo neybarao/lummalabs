@@ -219,12 +219,14 @@ export default function Home() {
       <main>
         <div className="hero-wrapper">
           <section className="hero">
-            <img
+            <video
               className="hero__bg"
-              src="/hero-starfish.jpg"
-              alt=""
+              src="/hero-bg.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               aria-hidden="true"
-              fetchPriority="high"
             />
             <div className="hero__content">
               <h1 className="hero-headline display">

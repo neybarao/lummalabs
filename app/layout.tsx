@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
 import "./globals.css";
 import ConsentBanner from "./consent-banner";
+import LoadingScreen from "./loading-screen";
 
 const archivo = Archivo({
   variable: "--font-display",
@@ -126,6 +127,7 @@ export default function RootLayout({
       <body
         className={`${archivo.variable} ${inter.variable}`}
       >
+        <LoadingScreen />
         {children}
         <ConsentBanner />
         <script
