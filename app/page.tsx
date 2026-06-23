@@ -1,126 +1,194 @@
 import Image from "next/image";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
-import { HiOutlineEnvelope } from "react-icons/hi2";
 import Animations from "./animations";
 import MobileNav from "./mobile-nav";
 import ContactForm from "./contact-form";
 
-const SPARKLE_PATH =
-  "M45.7 360.4C19.8 350.8 0 327.7 0 300C0 272.3 19.8 249.2 45.7 239.6L48.3 238.7C138 209 209 138 238.7 48.3C247.7 21.1 271.4 0 300 0C328.6 0 352.3 21.1 361.3 48.3C391 138 462 209 551.8 238.7L554.3 239.6C580.2 249.2 600 272.3 600 300C600 327.7 580.2 350.8 554.3 360.4L551.8 361.3C462 391 391 462 361.3 551.7C352.3 578.9 328.6 600 300 600C271.4 600 247.7 578.9 238.7 551.7C209 462 138 391 48.3 361.3L45.7 360.4Z";
+const IMG = "https://picsum.photos/seed";
 
-function Sparkle({ className, style }: { className?: string; style?: React.CSSProperties }) {
+function IconTempo() {
   return (
-    <svg viewBox="0 0 600 600" fill="currentColor" className={className} style={style} aria-hidden="true">
-      <path d={SPARKLE_PATH} />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7.5V12l3 1.8" />
     </svg>
   );
 }
 
+function IconCusto() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M19 8V7c0-1.7-1.3-3-3-3H6C4.3 4 3 5.3 3 7v10c0 1.7 1.3 3 3 3h10c1.7 0 3-1.3 3-3v-1" />
+      <path d="M21 12.5v-1c0-.8-.7-1.5-1.5-1.5H17c-1.4 0-2.5 1.1-2.5 2.5S15.6 15 17 15h2.5c.8 0 1.5-.7 1.5-1.5z" />
+      <path d="M16.7 12.5h.1" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg className="btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 12h14" />
+      <path d="M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function IconEntrega() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 7.5 12 12l8.5-4.5" />
+      <path d="M12 12v9" />
+      <path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z" />
+    </svg>
+  );
+}
+
+const whys = [
+  {
+    Icon: IconTempo,
+    title: "Tempo",
+    desc: "Seu time é ótimo, mas está sem tempo. Faz sentido quando falta espaço na agenda pra evoluir o produto com consistência.",
+  },
+  {
+    Icon: IconCusto,
+    title: "Custo",
+    desc: "Falta agilidade e assertividade? Faz sentido quando o que mais custa é demora, retrabalho e decisão sem clareza.",
+  },
+  {
+    Icon: IconEntrega,
+    title: "Entrega",
+    desc: "Sente que as entregas poderiam ser melhores? Faz sentido quando você precisa de design bem pensado, do briefing à interface final.",
+  },
+];
+
 const services = [
   {
-    num: "01",
-    name: ["Marca"],
-    desc: "Quando seu negócio precisa de uma identidade que diga quem você é antes de você falar. Não é só um logo bonito, é um sistema visual que aguenta o seu crescimento.",
-    deliverables: ["logo · paleta · tipografia", "versões e variações · manual de marca"],
+    num: "001",
+    name: "Web design e sites",
+    desc: "Quando seu site não comunica valor. Desenhamos e entregamos experiências digitais, do conceito ao site no ar.",
+    apps: "Institucionais · landing pages · one-pages",
+    img: "lumma-svc-web",
   },
   {
-    num: "02",
-    name: ["Design", "system"],
-    desc: "Quando você quer parar de inventar a roda toda vez que precisa de uma peça nova. Botões, cards, banners, posts, tudo derivado das mesmas regras. Você cresce sem perder consistência.",
-    deliverables: ["tokens visuais · componentes", "templates · documentação"],
+    num: "002",
+    name: "Design de produto",
+    desc: "Quando você tem uma ideia de produto e precisa dar forma a ela. Desenhamos a interface e a experiência de SaaS, apps e plataformas.",
+    apps: "SaaS · aplicativos · plataformas",
+    img: "lumma-svc-produto",
   },
   {
-    num: "03",
-    name: ["Brand", "system"],
-    desc: "Quando a marca precisa funcionar em mais lugares do que só o logo no site. Define como ela se comporta em cada contexto: tom de voz, fotografia, ilustração, copy, embalagem.",
-    deliverables: ["tom de voz · pilares de conteúdo", "diretrizes visuais · guia de aplicação"],
+    num: "003",
+    name: "Estratégia e estrutura",
+    desc: "Quando falta clareza sobre o que fazer. Estruturamos o produto, organizamos a arquitetura de informação e definimos prioridades.",
+    apps: "Novos produtos · redesign · diagnóstico",
+    img: "lumma-svc-estrategia",
   },
   {
-    num: "04",
-    name: ["Site"],
-    desc: "Quando seu site não comunica o valor do que você vende. Faz o trabalho que um vendedor bom faria: explica, convence, agenda. Rápido, responsivo, fácil de você mesmo atualizar.",
-    deliverables: ["institucional · landing · one-page", "design · código · publicação"],
+    num: "004",
+    name: "Prototipagem",
+    desc: "Quando você precisa ver e testar antes de investir em desenvolvimento. Protótipos navegáveis que validam a ideia com usuários reais.",
+    apps: "Provas de conceito · validação · pitch",
+    img: "lumma-svc-proto",
   },
   {
-    num: "05",
-    name: ["Instagram"],
-    desc: "Quando seu Instagram é onde o cliente decide se confia em você. Grid coerente, templates que você replica, linha editorial clara. Sua presença pronta pra começar a postar.",
-    deliverables: ["grid · templates · stories", "highlights · linha editorial inicial"],
+    num: "005",
+    name: "Design system",
+    desc: "Quando o produto cresce sem consistência. Estruturamos sistemas que padronizam decisões e preparam o produto pra escalar.",
+    apps: "SaaS · plataformas · apps",
+    img: "lumma-svc-ds",
+  },
+  {
+    num: "006",
+    name: "Identidade e marca",
+    desc: "Quando o produto precisa de uma identidade à altura. Marca como sistema que sustenta o crescimento.",
+    apps: "Identidade · diretrizes · aplicação",
+    img: "lumma-svc-marca",
   },
 ];
 
-const formats = [
+const methods = [
   {
-    label: "Formato A",
+    num: "01",
     title: "Escopo fechado",
-    tagline: "Pra quando você já sabe o que precisa.",
-    intro: "Você chega com a lista pronta: \"preciso de marca + site + 30 posts pra Instagram\". A gente define entregas, prazos e preço antes de começar. Você sabe exatamente o que vai receber e quando.",
+    tagline: "Quando o escopo é claro desde o início.",
+    intro: "Definimos entregáveis, prazos e critérios de validação antes de começar. Você sabe exatamente o que vai receber e quando.",
     bullets: [
-      "Briefing e proposta em até 5 dias úteis",
+      "Briefing e proposta logo na primeira semana",
       "Entregas em etapas validadas",
-      "Preço fechado · prazo fechado",
-      "Ideal pra projetos com começo, meio e fim claros",
+      "Prazo e critérios de aceite definidos",
     ],
-    fit: "Marca nova, site institucional, abertura de Instagram, lançamento de produto.",
-  },
-  {
-    label: "Formato B",
-    title: "Escopo aberto",
-    tagline: "Pra quando você precisa, mas não sabe exatamente o quê.",
-    intro: "A gente conversa, entende o contexto, e vai construindo junto. Trabalho contínuo em blocos mensais. Você usa o tempo da equipe pra o que for mais urgente naquela semana.",
-    bullets: [
-      "Bloco mensal de horas",
-      "Você prioriza o que entra na fila",
-      "Flexível pra ajustar conforme o negócio muda",
-      "Ideal pra quem precisa de design recorrente",
-    ],
-    fit: "Posts semanais, evolução de marca, materiais de venda, suporte criativo contínuo.",
-  },
-];
-
-const audiences = [
-  {
-    num: "01",
-    title: "Você tá começando agora",
-    desc: "Tem produto ou serviço, mas ainda não tem marca de verdade. Não quer começar com logo no Canva e site de template. Quer começar certo.",
+    fit: "Redesign de site, nova interface de produto, identidade, design system pontual.",
   },
   {
     num: "02",
-    title: "Você já existe, mas a marca não acompanha",
-    desc: "Seu negócio cresceu mais rápido que sua identidade visual. Cada peça parece de uma empresa diferente. Tá na hora de organizar.",
+    title: "Escopo aberto",
+    tagline: "Uma necessidade clara, mas sem todas as respostas.",
+    intro: "Exploramos, priorizamos e ajustamos o plano conforme o projeto ganha forma. Trabalho contínuo, com direção a cada etapa.",
+    bullets: [
+      "Descoberta antes de definir o caminho",
+      "Prioridades revistas a cada ciclo",
+      "Flexível para ajustar conforme o produto evolui",
+    ],
+    fit: "Novos produtos, evolução de plataforma, projetos de descoberta.",
   },
   {
     num: "03",
-    title: "Você quer parecer maior do que é hoje",
-    desc: "Sabe que o cliente decide em segundos pela aparência. Quer transmitir confiança antes mesmo de abrir a boca pra vender.",
+    title: "Extensão de time",
+    tagline: "Um time de design à sua disposição.",
+    intro: "A Lumma entra em cena para acelerar, otimizar e manter consistência nas entregas, integrada ao seu time interno.",
+    bullets: [
+      "Bloco mensal de dedicação",
+      "Você prioriza o que entra na fila",
+      "Consistência mantida ao longo do produto",
+    ],
+    fit: "Times de produto sem capacidade de design, evolução contínua de interface.",
   },
 ];
+
+const featuredCase = {
+  client: "Norvex Logística · Plataforma B2B",
+  challenge: "Tinham um sistema interno difícil de usar, que afastava clientes novos e gerava chamados de suporte sem parar.",
+  work: "Redesenhamos a experiência da plataforma e entregamos um protótipo navegável, validado com usuários reais antes do desenvolvimento.",
+  result: "O time aprovou a nova direção em uma única rodada e seguiu pro desenvolvimento com clareza do que construir.",
+  quote: "A Lumma entendeu nosso problema antes de desenhar qualquer tela. O protótipo deu segurança pra todo mundo seguir.",
+  author: "Camila Ferraz, Head de Produto",
+};
 
 const faqs = [
   {
-    q: "Quanto custa um projeto na Lumma?",
-    a: "Depende do escopo. Marca completa começa em uma faixa, site em outra, pacote completo em outra. Na primeira conversa a gente entende o que você precisa e te manda uma proposta direta, sem joguinho de \"fale com nosso consultor\".",
+    q: "Quanto tempo leva pra dar forma ao meu produto?",
+    a: "Depende da complexidade, mas a gente não enrola: assim que entendemos o escopo, damos um prazo realista logo na primeira conversa.",
   },
   {
-    q: "Em quanto tempo fica pronto?",
-    a: "Marca: 2 a 4 semanas. Site: 3 a 6 semanas. Pacote completo (marca + site + Instagram): 6 a 10 semanas. Sempre dependendo do escopo e da agilidade nas validações. A gente é rápido, mas não corta caminho em decisão importante.",
+    q: "Que tipo de trabalho a Lumma faz?",
+    a: "Design de sites, produtos digitais e identidade, do conceito ao protótipo navegável. Desenhamos SaaS, apps, plataformas, sites e qualquer interface que seu negócio precisar.",
   },
   {
-    q: "Eu preciso já ter marca pra contratar?",
-    a: "Não. Se você ainda não tem, a gente começa por aí. Se já tem mas quer revisar, a gente avalia se faz sentido manter, refinar ou refazer.",
+    q: "Como funciona o processo?",
+    a: "Colaborativo e dividido em etapas. Antes da mão na massa, um onboarding claro alinhando entregas e prazos. Construímos validando em cada fase antes de seguir.",
   },
   {
-    q: "E se eu só quiser uma coisa (só o site, só o Instagram)?",
-    a: "Pode. A gente trabalha tanto com pacote quanto com peça solta. Mas vale conversar, às vezes o que você acha que precisa não é exatamente o que vai resolver.",
+    q: "O que eu preciso pra começar?",
+    a: "Um problema e vontade de resolvê-lo. A gente conversa, entende o contexto e entrega uma proposta direta e alinhada com o que o negócio precisa.",
   },
   {
-    q: "Vocês atendem fora do Brasil?",
-    a: "Sim. Trabalhamos remoto, com clientes em qualquer lugar. Reuniões por chamada de vídeo, entregas digitais.",
+    q: "Depois do projeto, tenho acesso ao que foi criado?",
+    a: "Claro. O projeto é seu. Entregamos os arquivos editáveis, os protótipos e a documentação pra seu time seguir com independência.",
   },
   {
-    q: "Como começa?",
-    a: "Você manda uma mensagem contando o que precisa. A gente marca uma conversa de 30 minutos pra entender o contexto. Em até 5 dias úteis, você recebe uma proposta. Se fechar, começamos na semana seguinte.",
+    q: "A Lumma trabalha como extensão do nosso time?",
+    a: "Sim. Esse é um dos formatos: um time especialista de design à disposição, integrado ao seu, pra acelerar e manter consistência.",
   },
+];
+
+const marqueeItems = [
+  "Design de produto",
+  "Prototipagem",
+  "Web design",
+  "Design system",
+  "Estratégia",
+  "Interface",
+  "Identidade",
 ];
 
 export default function Home() {
@@ -128,27 +196,21 @@ export default function Home() {
     <>
       <Animations />
       <header className="site-header" id="top">
-        <a className="site-header__logo" href="#top">
+        <a className="site-header__logo" href="#top" aria-label="Lumma, ir para o topo">
           <Image
             src="/Logo-lumma-header.svg"
             alt="Lumma"
-            width={274}
-            height={64}
-            className="site-header__logo-img site-header__logo-img--dark"
+            width={123}
+            height={39}
+            className="site-header__logo-img"
             priority
-          />
-          <Image
-            src="/Logo-lumma-header-light.svg"
-            alt=""
-            width={140}
-            height={60}
-            className="site-header__logo-img site-header__logo-img--light"
-            aria-hidden="true"
           />
         </a>
         <nav className="site-nav" aria-label="Principal">
           <a href="#servicos">Serviços</a>
+          <a href="#por-que">Por que a Lumma</a>
           <a href="#como-trabalhamos">Como trabalhamos</a>
+          <a href="#experiencia">Experiência</a>
           <a href="#faq">FAQ</a>
           <a className="nav-cta" href="#contato">Conversar</a>
         </nav>
@@ -157,288 +219,309 @@ export default function Home() {
 
       <main>
         <section className="hero">
-          <div className="hero__card">
-            {/* <Sparkle className="hero__sparkle" /> */}
-            <div className="hero__grid">
-              <div className="hero__lead">
-                <h1 className="hero-headline">
-                  Design e comunicação
-                  <br />
-                  <em>sem</em> rodeios.
-                </h1>
-                <p className="hero-sub">
-                  Criamos marca, design system, site e Instagram com qualidade de grande empresa, pra pequenos negócios que querem ser levados a sério desde o primeiro dia.
-                </p>
-                <div className="hero-cta-row">
-                  <a className="btn btn-primary" href="#contato">Começar um projeto</a>
-                  <a className="btn btn-ghost-ink" href="#como-trabalhamos">Ver como trabalhamos</a>
-                </div>
-                <ul className="hero__tags" aria-label="O que fazemos">
-                  <li>Marca</li>
-                  <li>Design system</li>
-                  <li>Brand system</li>
-                  <li>Site</li>
-                  <li>Instagram</li>
-                </ul>
+          <img
+            className="hero__bg"
+            src={`${IMG}/lumma-hero/1800/1200`}
+            alt=""
+            aria-hidden="true"
+          />
+          <div className="hero__scrim" aria-hidden="true" />
+          <div className="wrap hero__content">
+            <div className="hero__top">
+              <span className="label">Lumma© 2026 · Estúdio de design e produto digital</span>
+              <p className="hero__intro">
+                Ajudamos empresas a idealizar, desenhar e prototipar produtos digitais, do conceito ao protótipo navegável.
+              </p>
+            </div>
+            <div className="hero__bottom">
+              <h1 className="hero-headline display">
+                Design que dá forma
+                <br />
+                à sua <em>ideia</em>
+                <span className="ast">✱</span>
+              </h1>
+              <div className="hero-cta-row">
+                <a className="btn btn-accent" href="#contato">
+                  Começar um projeto
+                  <ArrowIcon />
+                </a>
+                <a className="btn btn-ghost-light" href="#como-trabalhamos">Ver como trabalhamos</a>
               </div>
-              <div className="hero__visual">
-                <div className="hero__visual-chip">Conheça a Lumma ✦</div>
-                <div className="hero__visual-frame" role="img" aria-label="Imagem em breve">
-                  <span className="hero__visual-placeholder">Imagem · 1:1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero__mosaic" aria-hidden="true">
-            <div className="hero__mosaic-tile" data-ratio="portrait">
-              <span>Imagem · 3:4</span>
-            </div>
-            <div className="hero__mosaic-tile" data-ratio="square">
-              <span>Imagem · 1:1</span>
-            </div>
-            <div className="hero__mosaic-tile" data-ratio="portrait">
-              <span>Imagem · 3:4</span>
-            </div>
-            <div className="hero__mosaic-tile" data-ratio="square">
-              <span>Imagem · 1:1</span>
-            </div>
-            <div className="hero__mosaic-tile" data-ratio="portrait">
-              <span>Imagem · 3:4</span>
             </div>
           </div>
         </section>
 
-        <section className="para-quem section" id="para-quem">
-          <div className="section-eyebrow">Para quem · três perfis que a gente atende bem</div>
-          <h2 className="section-title">A Lumma faz sentido pra você <em>se…</em></h2>
-          <p className="section-lead">A gente não atende todo mundo. Trabalha bem com quem se reconhece aqui.</p>
-          <div className="para-quem-grid">
-            {audiences.map((a) => (
-              <div className="audience" key={a.num}>
-                <div className="audience__num">{a.num}</div>
-                <h3 className="audience__title">{a.title}</h3>
-                <p className="audience__desc">{a.desc}</p>
+        <section className="statement wrap" aria-label="Posicionamento">
+          <div className="statement__grid">
+            <p className="statement__big">
+              Visão estratégica, execução afiada e foco total na <em>experiência.</em>
+            </p>
+            <div className="statement__side">
+              <p>
+                Trabalhamos com empresas que querem criar, evoluir ou destravar um produto digital. Da primeira ideia ao protótipo que dá segurança pra investir.
+              </p>
+              <p>
+                <strong>Não prometemos atalho.</strong> Entendemos o problema de negócio antes de desenhar qualquer tela, e entregamos design que seu time consegue tocar com independência.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee__track">
+            {[...marqueeItems, ...marqueeItems].map((item, i) => (
+              <span className="marquee__item" key={i}>{item}</span>
+            ))}
+          </div>
+        </div>
+
+        <section className="triptych wrap section--tight" aria-label="Trabalho">
+          <div className="triptych__grid">
+            <div className="figure figure--tall reveal">
+              <img src={`${IMG}/lumma-trip-1/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <span className="figure__tag">Interface</span>
+            </div>
+            <div className="figure figure--tall reveal">
+              <img src={`${IMG}/lumma-trip-2/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <span className="figure__tag">Produto</span>
+            </div>
+            <div className="figure figure--tall reveal">
+              <img src={`${IMG}/lumma-trip-3/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <span className="figure__tag">Identidade</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="section wrap" id="por-que">
+          <div className="why-head section-head">
+            <div>
+              <span className="label">Por que nos escolher</span>
+              <h2 className="section-title" style={{ marginTop: 26 }}>
+                Quando a Lumma faz <em>sentido.</em>
+              </h2>
+            </div>
+            <p className="lead" style={{ marginTop: 0 }}>
+              Criar, evoluir ou destravar um produto digital. Quando isso vira um problema, a Lumma faz sentido. Simples assim.
+            </p>
+          </div>
+          <div className="why-grid">
+            {whys.map((w) => (
+              <div className="why-card reveal" key={w.title}>
+                <div className="why-card__icon"><w.Icon /></div>
+                <h3 className="why-card__title">{w.title}</h3>
+                <p className="why-card__desc">{w.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="services section section--dark" id="servicos">
-          <div className="section-eyebrow">Serviços · cinco entregas, bem feitas</div>
-          <h2 className="section-title">O que a gente <em>faz.</em></h2>
-          <p className="section-lead">Cinco entregas que cobrem tudo que um pequeno negócio precisa pra ter presença visual e comunicação consistente. Você contrata a peça que falta, ou o pacote completo.</p>
+        <section className="section wrap" id="servicos">
+          <div className="section-head">
+            <span className="label">Serviços · o que fazemos</span>
+            <h2 className="section-title" style={{ marginTop: 26 }}>
+              O que a gente <em>faz.</em>
+            </h2>
+            <p className="lead">
+              Seis frentes de design que cobrem o ciclo de um produto digital, da ideia ao protótipo. Você contrata a frente que falta ou o trabalho completo.
+            </p>
+          </div>
           <div className="services-grid">
             {services.map((s) => (
-              <div className="service" key={s.num}>
-                <div className="service__num">{s.num}</div>
-                <div className="service__name">
-                  {s.name.map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      {i < s.name.length - 1 && <br />}
-                    </span>
-                  ))}
+              <div className="svc reveal" key={s.num}>
+                <span className="svc__num">{s.num}</span>
+                <div className="svc__thumb">
+                  <img src={`${IMG}/${s.img}/240/240`} alt="" aria-hidden="true" loading="lazy" />
                 </div>
-                <div className="service__desc">{s.desc}</div>
-                <div className="service__deliverables">
-                  {s.deliverables.map((d, i) => (
-                    <span key={i}>
-                      {d}
-                      {i < s.deliverables.length - 1 && <br />}
-                    </span>
-                  ))}
+                <div className="svc__main">
+                  <h3 className="svc__name">{s.name}</h3>
+                  <p className="svc__desc">{s.desc}</p>
                 </div>
+                <span className="svc__apps">{s.apps}</span>
               </div>
             ))}
           </div>
           <div className="services-cta">
-            <a className="btn btn-primary" href="#contato">Quero entender o melhor pacote pra mim</a>
+            <a className="btn btn-ink" href="#contato">
+              Quero conversar sobre meu projeto
+              <ArrowIcon />
+            </a>
           </div>
         </section>
 
-        <section className="como-trabalhamos section" id="como-trabalhamos">
-          <div className="section-eyebrow">Como trabalhamos · dois formatos</div>
-          <h2 className="section-title">
-            Dois formatos. Você escolhe
-            <br />
-            o que <em>combina.</em>
-          </h2>
-          <p className="section-lead">Não existe um jeito certo de tocar um projeto. Existe o jeito certo pro momento do seu negócio.</p>
-          <div className="formats-grid">
-            {formats.map((f) => (
-              <div className="format" key={f.title}>
-                <div className="format__label">{f.label}</div>
-                <h3 className="format__title">{f.title}</h3>
-                <p className="format__tagline"><em>{f.tagline}</em></p>
-                <p className="format__intro">{f.intro}</p>
-                <div className="format__bullets-label">Como funciona:</div>
-                <ul className="format__bullets">
-                  {f.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                </ul>
-                <p className="format__fit"><strong>Quando faz sentido:</strong> {f.fit}</p>
-              </div>
-            ))}
+        <section className="break dark" aria-label="Imagem">
+          <div className="break__media">
+            <img src={`${IMG}/lumma-break/2000/1100`} alt="" aria-hidden="true" loading="lazy" />
           </div>
-          <div className="services-cta">
-            <a className="btn btn-dark" href="#contato">Quero conversar sobre o formato ideal</a>
+          <div className="break__quote">
+            <div className="wrap">
+              <p className="break__text reveal">
+                Bom design não é como fica. É como <em>funciona</em> quando alguém precisa decidir.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="voice" id="voz">
-          <div className="voice__inner">
-            <div className="section-eyebrow">Como a gente fala</div>
-            <h2 className="section-title">
-              Sem jargão. Sem
-              <br />
-              <em>sinergia.</em> Sem 360°.
+        <section className="section wrap" id="como-trabalhamos">
+          <div className="section-head">
+            <span className="label">Como trabalhamos · três formatos</span>
+            <h2 className="section-title" style={{ marginTop: 26 }}>
+              Método claro, <em>adaptado</em> ao seu contexto.
             </h2>
-            <div className="voice-grid">
-              <div className="voice-col bad">
-                <div className="voice-col__label bad">— Evitamos</div>
-                <div className="voice-col__list">
-                  <div className="voice-col__item">Soluções de comunicação visual sob medida</div>
-                  <div className="voice-col__item">Potencializamos sua marca no mercado</div>
-                  <div className="voice-col__item">Entregáveis com qualidade premium</div>
-                  <div className="voice-col__item">Estratégia 360° de comunicação</div>
-                </div>
-              </div>
-              <div className="voice-col good">
-                <div className="voice-col__label good">+ Preferimos</div>
-                <div className="voice-col__list">
-                  <div className="voice-col__item">Logos, sites e vídeos pra quem está começando</div>
-                  <div className="voice-col__item">Fazemos seu negócio aparecer melhor</div>
-                  <div className="voice-col__item">O que combinamos, no prazo, bem feito</div>
-                  <div className="voice-col__item">Identidade, site e redes, tudo conversando entre si</div>
-                </div>
-              </div>
-            </div>
+            <p className="lead">
+              Menos fórmula. Mais leitura de cenário. Não existe um único jeito de trabalhar. Existe o jeito certo pro contexto do seu negócio.
+            </p>
           </div>
-        </section>
-
-        <section className="faq section" id="faq">
-          <div className="section-eyebrow">FAQ · perguntas que mais aparecem</div>
-          <h2 className="section-title">
-            Antes de começar, é normal ter <em>dúvida.</em>
-          </h2>
-          <p className="section-lead">As perguntas que mais aparecem, respondidas como a gente responderia numa conversa.</p>
-          <div className="faq-list">
-            {faqs.map((item, i) => (
-              <details className="faq__item" key={i} {...(i === 0 ? { open: true } : {})}>
-                <summary className="faq__q">
-                  <span>{item.q}</span>
-                  <span className="faq__icon" aria-hidden="true">+</span>
-                </summary>
-                <p className="faq__a">{item.a}</p>
-              </details>
+          <div className="method-grid">
+            {methods.map((m) => (
+              <div className="method reveal" key={m.num}>
+                <div className="method__num">{m.num}</div>
+                <h3 className="method__title">{m.title}</h3>
+                <p className="method__tagline">{m.tagline}</p>
+                <p className="method__intro">{m.intro}</p>
+                <ul className="method__bullets">
+                  {m.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                </ul>
+                <p className="method__fit"><strong>Quando faz sentido:</strong> {m.fit}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        <section className="cta-block" id="contato">
-          <div className="cta-block__inner">
-            <div className="cta-block__copy">
-              <div className="section-eyebrow">Conversa de 30 minutos · sem compromisso</div>
-              <h2 className="cta-title">
-                Vamos
-                <br />
-                <em>começar?</em>
+        <section className="section wrap" id="experiencia">
+          <div className="section-head">
+            <span className="label">Experiência · um projeto, contado de perto</span>
+            <h2 className="section-title" style={{ marginTop: 26 }}>
+              Não temos volume. Temos <em>profundidade.</em>
+            </h2>
+            <p className="lead">
+              Cada projeto recebe atenção total. Esse é o tipo de trabalho que entregamos.
+            </p>
+          </div>
+          <div className="case reveal">
+            <div className="case__media">
+              <img src={`${IMG}/lumma-case/1200/900`} alt="Projeto em destaque da Lumma" loading="lazy" />
+              <span className="case__meta-tag">Plataforma · 2026</span>
+            </div>
+            <div className="case__panel">
+              <span className="case__client">{featuredCase.client}</span>
+              <div className="case__block">
+                <span className="case__block-label">O desafio</span>
+                <p className="case__block-text">{featuredCase.challenge}</p>
+              </div>
+              <div className="case__block">
+                <span className="case__block-label">O que fizemos</span>
+                <p className="case__block-text">{featuredCase.work}</p>
+              </div>
+              <div className="case__block">
+                <span className="case__block-label">O resultado</span>
+                <p className="case__block-text">{featuredCase.result}</p>
+              </div>
+              <blockquote className="case__quote">
+                <p>&ldquo;{featuredCase.quote}&rdquo;</p>
+                <footer>{featuredCase.author}</footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section className="section wrap" id="faq">
+          <div className="faq-grid">
+            <div className="section-head">
+              <span className="label">FAQ</span>
+              <h2 className="section-title" style={{ marginTop: 26 }}>
+                Antes de começar, é normal ter <em>dúvida.</em>
               </h2>
-              <p className="cta-sub">Não precisa ter tudo pronto. Conta o que você precisa e a gente desenha o caminho com você.</p>
             </div>
-            <Sparkle className="cta-block__sparkle" />
-          </div>
-
-          <div className="pillars">
-            <div className="pillar">
-              <h3 className="pillar__title">Resposta em até 24h</h3>
-              <p className="pillar__desc">Mensagem recebida vira conversa marcada. Sem ficar esperando.</p>
-            </div>
-            <div className="pillar">
-              <h3 className="pillar__title">Proposta clara em 5 dias</h3>
-              <p className="pillar__desc">Você sai da primeira conversa sabendo o que vamos fazer, em quanto tempo e por quanto.</p>
-            </div>
-            <div className="pillar">
-              <h3 className="pillar__title">Sem compromisso na conversa</h3>
-              <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem cobrança, sem pressão.</p>
+            <div className="faq-list">
+              {faqs.map((item, i) => (
+                <details className="faq__item" key={i} {...(i === 0 ? { open: true } : {})}>
+                  <summary className="faq__q">
+                    <span>{item.q}</span>
+                    <span className="faq__icon" aria-hidden="true" />
+                  </summary>
+                  <p className="faq__a">{item.a}</p>
+                </details>
+              ))}
             </div>
           </div>
+        </section>
 
-          <ContactForm />
+        <section className="cta section dark" id="contato">
+          <div className="wrap">
+            <div className="cta__head">
+              <span className="label">Vamos conversar · sem compromisso</span>
+              <h2 className="cta-title">
+                Pronto para o
+                <br />
+                <em>primeiro passo?</em>
+              </h2>
+              <p className="cta__sub">
+                Não precisa ter tudo pronto. Conta o que tá travando e a gente destrava junto.
+              </p>
+            </div>
 
-          <div className="cta-alt">
-            <span>Ou se preferir:</span>
-            <a className="btn btn-ghost-ink" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
-            <a className="btn btn-ghost-ink" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
+            <div className="pillars">
+              <div className="pillar reveal">
+                <h3 className="pillar__title">Resposta em até 24h</h3>
+                <p className="pillar__desc">Mensagem recebida vira conversa marcada. Sem ficar esperando.</p>
+              </div>
+              <div className="pillar reveal">
+                <h3 className="pillar__title">Próximos passos claros</h3>
+                <p className="pillar__desc">Você sai da conversa sabendo o que vamos fazer, em quanto tempo e por quanto.</p>
+              </div>
+              <div className="pillar reveal">
+                <h3 className="pillar__title">Sem compromisso na conversa</h3>
+                <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem pressão.</p>
+              </div>
+            </div>
+
+            <ContactForm />
+
+            <div className="cta-alt">
+              <span>Ou se preferir:</span>
+              <a className="btn btn-ghost-light" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
+              <a className="btn btn-ghost-light" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
+            </div>
           </div>
         </section>
       </main>
 
       <footer className="site-footer">
-        <div className="site-footer__grain" aria-hidden="true" />
         <div className="site-footer__inner">
-          <div className="site-footer__lead">
-            <h2 className="site-footer__big">
-              A luz na medida
-              <br />
-              <em>certa.</em>
-            </h2>
+          <div className="site-footer__big">
+            Design que dá forma
+            <br />
+            à sua <em>ideia.</em>
           </div>
-
-          <nav className="site-footer__col" aria-label="Estúdio">
+          <div>
             <h4>Estúdio</h4>
             <ul>
-              <li><a href="#para-quem">Para quem</a></li>
+              <li><a href="#por-que">Por que a Lumma</a></li>
               <li><a href="#servicos">Serviços</a></li>
               <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
+              <li><a href="#experiencia">Experiência</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
-          </nav>
-
-          <div className="site-footer__col">
+          </div>
+          <div>
             <h4>Contato</h4>
             <ul>
-              <li>
-                <a href="https://www.instagram.com/lummalabs" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram aria-hidden="true" />
-                  <span>Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">
-                  <FaWhatsapp aria-hidden="true" />
-                  <span>WhatsApp</span>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:oi@lummalabs.com.br">
-                  <HiOutlineEnvelope aria-hidden="true" />
-                  <span>oi@lummalabs.com.br</span>
-                </a>
-              </li>
+              <li><a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a></li>
+              <li><a href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">(11) 97461 3761</a></li>
+              <li><a href="https://lummalabs.com.br">lummalabs.com.br</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Onde</h4>
+            <ul>
+              <li>Brasil · remoto</li>
+              <li>Atende em todo lugar</li>
             </ul>
           </div>
         </div>
-
         <div className="site-footer__bottom">
-          <div>
-            <svg
-              className="site-footer__bottom-mark"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M1.82895 14.4168C0.792645 14.0333 0 13.108 0 11.9999C0 10.892 0.792645 9.96673 1.82895 9.58319L1.93073 9.54757C5.51924 8.35849 8.35829 5.52019 9.54726 1.93052C9.90657 0.844692 10.8565 0 11.9992 0C13.1435 0 14.0934 0.844692 14.4527 1.93052C15.6417 5.52019 18.4807 8.35849 22.0693 9.54757L22.171 9.58319C23.2073 9.96673 24 10.892 24 11.9999C24 13.108 23.2073 14.0333 22.171 14.4168L22.0693 14.4524C18.4807 15.6414 15.6417 18.4798 14.4527 22.0695C14.0934 23.1554 13.1435 24 11.9992 24C10.8565 24 9.90657 23.1554 9.54726 22.0695C8.35829 18.4798 5.51924 15.6414 1.93073 14.4524L1.82895 14.4168Z"
-                fill="currentColor"
-              />
-            </svg>
-            <span className="site-footer__bottom-label">© Lumma · 2026</span>
-            <span className="site-footer__bottom-value">Feito com IA e talento humano</span>
-          </div>
+          <span>© Lumma · 2026 · lummalabs.com.br</span>
+          <span>Estúdio de design e produto digital</span>
         </div>
       </footer>
     </>

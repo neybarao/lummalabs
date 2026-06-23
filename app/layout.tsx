@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -16,16 +16,11 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-});
-
 const SITE_URL = "https://lummalabs.com.br";
 const SITE_NAME = "Lumma";
-const TITLE = "Lumma — Estúdio de design, multimídia e comunicação";
+const TITLE = "Lumma · Estúdio de design e produto digital";
 const DESCRIPTION =
-  "Design, multimídia e comunicação pra negócios pequenos que querem ser vistos como o que realmente são. Identidade visual, websites, redes sociais, aplicativos e manual de comunicação.";
+  "Ajudamos empresas a idealizar, desenhar e prototipar produtos digitais. Sites, SaaS, aplicativos, plataformas, design systems e identidade. Do conceito ao protótipo navegável.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,12 +34,12 @@ export const metadata: Metadata = {
     "Lumma",
     "Lumma Labs",
     "estúdio de design",
-    "identidade visual",
-    "design para pequenos negócios",
+    "design de produto",
+    "UX UI",
+    "design de SaaS",
+    "prototipagem",
+    "design system",
     "websites",
-    "design de redes sociais",
-    "manual de comunicação",
-    "branding",
     "design Brasil",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
@@ -110,12 +105,12 @@ const jsonLd = {
     "@type": "OfferCatalog",
     name: "Serviços",
     itemListElement: [
-      "Identidade visual",
-      "Design",
-      "Redes sociais",
-      "Websites",
-      "Aplicativos",
-      "Manual de comunicação",
+      "Web design e sites",
+      "Design de produto (UX/UI)",
+      "Estratégia e estrutura de produto",
+      "Prototipagem",
+      "Design System",
+      "Identidade e marca",
     ].map((name) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },
@@ -131,6 +126,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <Script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
@@ -143,7 +139,7 @@ gtag('config', '${GA_ID}');`}
         </Script>
       </head>
       <body
-        className={`${archivo.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+        className={`${archivo.variable} ${inter.variable}`}
       >
         {children}
         <script
