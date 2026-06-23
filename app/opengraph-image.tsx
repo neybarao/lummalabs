@@ -27,7 +27,7 @@ export default function OpengraphImage() {
             fontSize: 26,
             letterSpacing: 6,
             textTransform: "uppercase",
-            color: "#FF332C",
+            color: "#50F160",
           }}
         >
           LUMMA
@@ -45,7 +45,7 @@ export default function OpengraphImage() {
           <span>Design que dá</span>
           <span>
             forma à sua{" "}
-            <span style={{ color: "#FF332C" }}>ideia.</span>
+            <span style={{ color: "#50F160" }}>ideia.</span>
           </span>
         </div>
         <div

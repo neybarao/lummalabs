@@ -1,12 +1,13 @@
 :root {
-  /* Core palette: stark black on white, single red accent (from logo) */
+  /* Core palette */
   --paper:        #ffffff;
   --paper-2:      #f5f4f2;
-  --ink:          #0d0d0d;
+  --ink:          #000000;
   --ink-2:        #6b6b68;
   --ink-3:        #9a9a96;
-  --accent:       #ff332c;
-  --accent-700:   #d21f19;
+  --accent:       #50F160;
+  --accent-700:   #3bd44a;
+  --accent-dark:  #093417;
   --on-dark:      #f5f5f5;
   --on-dark-2:    rgba(245, 245, 245, 0.64);
   --on-dark-3:    rgba(245, 245, 245, 0.42);
@@ -126,7 +127,7 @@ img { display: block; max-width: 100%; }
               transform var(--dur-fast) var(--ease-out);
 }
 .btn:active { transform: scale(0.98); }
-.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent { background: var(--accent); color: var(--accent-dark); }
 .btn-accent:hover { background: var(--accent-700); }
 .btn-ink { background: var(--ink); color: var(--on-dark); }
 .btn-ink:hover { background: var(--accent); color: #fff; }
@@ -143,9 +144,8 @@ img { display: block; max-width: 100%; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px;
   padding: 16px var(--pad-x);
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--line-2);
+  background: var(--paper);
+  border-bottom: none;
 }
 .site-header__logo { display: inline-flex; align-items: center; }
 .site-header__logo-img { height: 30px; width: auto; }
@@ -157,48 +157,50 @@ img { display: block; max-width: 100%; }
 .site-nav a:not(.nav-cta):hover { color: var(--accent); }
 .site-nav a.nav-cta {
   padding: 11px 20px; border-radius: var(--radius-pill);
-  background: var(--accent); color: #fff;
+  background: var(--accent); color: var(--accent-dark);
   transition: background var(--dur-base) var(--ease-out);
 }
-.site-nav a.nav-cta:hover { background: var(--accent-700); color: #fff; }
+.site-nav a.nav-cta:hover { background: var(--accent-700); color: var(--accent-dark); }
 
 /* ---------- Hero --------------------------------------------- */
+.hero-wrapper {
+  padding: 0 16px;
+}
 .hero {
   position: relative;
-  background: var(--ink);
+  background: #0a0a0a;
   color: var(--on-dark);
-  min-height: 86vh;
+  min-height: 90vh;
   display: flex;
   overflow: hidden;
+  border-radius: 24px;
 }
 .hero__bg {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.04);
-  opacity: 0.5;
-}
-.hero__scrim {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.35) 45%, rgba(13,13,13,0.55) 100%);
+  object-fit: cover; object-position: right center;
 }
 .hero__content {
   position: relative; z-index: 2;
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding-top: 56px; padding-bottom: 56px;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+  gap: 34px;
+  padding: 96px var(--pad-x) var(--pad-x);
   width: 100%;
 }
-.hero__top {
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;
+.hero__mark {
+  position: absolute; right: var(--pad-x); bottom: var(--pad-x); z-index: 2;
+  width: 92px; height: auto;
+  animation: spin-mark 12s linear infinite;
 }
-.hero__intro {
-  max-width: 360px; text-align: right;
-  font-size: 15px; line-height: 1.5; color: var(--on-dark-2);
-}
-.hero__bottom { margin-top: auto; }
-.hero-headline { color: var(--on-dark); margin-bottom: 36px; }
+@keyframes spin-mark { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.hero-headline { color: var(--on-dark); margin: 0; }
 .hero-headline em { color: var(--accent); font-style: normal; }
+.hero-sub {
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 18px; line-height: 1.8; color: var(--on-dark-2);
+  max-width: 520px; margin: 0;
+}
+.hero-sub strong { font-weight: 700; color: var(--on-dark); }
 .hero-cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
 /* ---------- Statement ---------------------------------------- */
@@ -269,13 +271,13 @@ img { display: block; max-width: 100%; }
 .why-card:hover { border-color: var(--ink); transform: translateY(-4px); }
 .why-card__icon {
   width: 52px; height: 52px; border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
+  background: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  color: var(--ink); margin-bottom: 28px;
+  color: var(--accent-dark); margin-bottom: 28px;
   transition: background var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
 }
 .why-card__icon svg { width: 26px; height: 26px; }
-.why-card:hover .why-card__icon { background: var(--accent); color: #fff; border-color: var(--accent); }
 .why-card__title {
   font-family: var(--font-display); font-weight: 500;
   font-size: 26px; letter-spacing: -0.02em; margin-bottom: 12px;
@@ -427,6 +429,7 @@ img { display: block; max-width: 100%; }
 .faq__icon::before, .faq__icon::after {
   content: ""; position: absolute; left: 50%; top: 50%; background: var(--accent);
 }
+.faq__item[open] .faq__icon { color: var(--accent); }
 .faq__icon::before { width: 14px; height: 1.5px; transform: translate(-50%, -50%); }
 .faq__icon::after { width: 1.5px; height: 14px; transform: translate(-50%, -50%); transition: transform var(--dur-base) var(--ease-out); }
 .faq__item[open] .faq__icon::after { transform: translate(-50%, -50%) scaleY(0); }
@@ -506,7 +509,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- Consent banner (LGPD) ---------------------------- */
 .consent {
-  position: fixed; left: 24px; bottom: 24px; z-index: 80;
+  position: fixed; right: 24px; bottom: 24px; z-index: 80;
   width: min(360px, calc(100vw - 48px));
   background: var(--ink); color: var(--on-dark);
   border-radius: var(--radius-lg);
@@ -523,7 +526,7 @@ img { display: block; max-width: 100%; }
 }
 .consent__btn--ghost { background: transparent; color: var(--on-dark); border-color: var(--line-dark); }
 .consent__btn--ghost:hover { background: var(--on-dark); color: var(--ink); border-color: var(--on-dark); }
-.consent__btn--accent { background: var(--accent); color: #fff; }
+.consent__btn--accent { background: var(--accent); color: var(--accent-dark); }
 .consent__btn--accent:hover { background: var(--accent-700); }
 
 /* ---------- Reveal (JS-driven) ------------------------------- */

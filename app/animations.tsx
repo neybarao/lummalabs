@@ -15,23 +15,13 @@ export default function Animations() {
 
       gsap.from(".site-header", { y: -12, opacity: 0, duration: 0.7, ease });
 
-      const heroTl = gsap.timeline({ delay: 0.15 });
-      heroTl
-        .from(".hero__top > *", { y: 14, opacity: 0, duration: 0.8, stagger: 0.1, ease })
-        .from(".hero-headline", { y: 34, opacity: 0, duration: 1.1, ease }, "-=0.4")
-        .fromTo(
-          ".hero-cta-row .btn",
-          { y: 12, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            stagger: 0.08,
-            ease,
-            onComplete: () => gsap.set(".hero-cta-row .btn", { clearProps: "all" }),
-          },
-          "-=0.6",
-        );
+      // Subtle, transform-only hero entrance (never gates visibility on opacity,
+      // so the hero can't get stuck invisible if the tween is interrupted).
+      gsap.fromTo(
+        ".hero-headline, .hero-sub, .hero-cta-row",
+        { y: 18 },
+        { y: 0, duration: 0.9, stagger: 0.08, ease, delay: 0.15, clearProps: "transform" },
+      );
 
       ScrollTrigger.batch(".reveal", {
         start: "top 88%",

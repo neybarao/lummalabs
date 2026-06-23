@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Animations from "./animations";
 import MobileNav from "./mobile-nav";
-import ContactForm from "./contact-form";
 
 const IMG = "https://picsum.photos/seed";
 
@@ -218,28 +217,24 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="hero">
-          <img
-            className="hero__bg"
-            src={`${IMG}/lumma-hero/1800/1200`}
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="hero__scrim" aria-hidden="true" />
-          <div className="wrap hero__content">
-            <div className="hero__top">
-              <span className="label">Lumma© 2026 · Estúdio de design e produto digital</span>
-              <p className="hero__intro">
-                Ajudamos empresas a idealizar, desenhar e prototipar produtos digitais, do conceito ao protótipo navegável.
-              </p>
-            </div>
-            <div className="hero__bottom">
+        <div className="hero-wrapper">
+          <section className="hero">
+            <img
+              className="hero__bg"
+              src="/hero-starfish.jpg"
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+            />
+            <div className="hero__content">
               <h1 className="hero-headline display">
                 Design de produto que
                 <br />
                 dá forma à sua <em>ideia</em>
-                <span className="ast">✱</span>
               </h1>
+              <p className="hero-sub">
+                Ajudamos empresas a idealizar, desenhar e prototipar <strong>produtos digitais</strong>, do conceito ao protótipo navegável.
+              </p>
               <div className="hero-cta-row">
                 <a className="btn btn-accent" href="#contato">
                   Começar um projeto
@@ -248,8 +243,9 @@ export default function Home() {
                 <a className="btn btn-ghost-light" href="#como-trabalhamos">Ver como trabalhamos</a>
               </div>
             </div>
-          </div>
-        </section>
+            <img className="hero__mark" src="/hero-mark.svg" alt="" aria-hidden="true" width={96} height={94} />
+          </section>
+        </div>
 
         <section className="statement wrap" aria-label="Posicionamento">
           <div className="statement__grid">
@@ -474,8 +470,6 @@ export default function Home() {
                 <p className="pillar__desc">A primeira chamada é pra entender se faz sentido pros dois lados. Sem pressão.</p>
               </div>
             </div>
-
-            <ContactForm />
 
             <div className="cta-alt">
               <span>Ou se preferir:</span>
