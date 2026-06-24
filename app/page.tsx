@@ -288,7 +288,7 @@ export default function Home() {
         <section className="triptych wrap section--tight" aria-label="Trabalho">
           <div className="triptych__grid">
             <div className="figure figure--tall reveal">
-              <img src={`${IMG}/lumma-trip-1/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <img src="/trip-interface.png" alt="Amostra de trabalho da Lumma" loading="lazy" />
               <span className="figure__tag">Interface</span>
             </div>
             <div className="figure figure--tall reveal">
@@ -296,7 +296,7 @@ export default function Home() {
               <span className="figure__tag">Produto</span>
             </div>
             <div className="figure figure--tall reveal">
-              <img src="/trip-identidade.jpg" alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <img src="/trip-identidade.png" alt="Amostra de trabalho da Lumma" loading="lazy" />
               <span className="figure__tag">Identidade</span>
             </div>
           </div>
