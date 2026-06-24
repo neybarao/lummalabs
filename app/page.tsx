@@ -360,7 +360,7 @@ export default function Home() {
 
         <section className="break dark" aria-label="Imagem">
           <div className="break__media">
-            <img src={`${IMG}/lumma-break/2000/1100`} alt="" aria-hidden="true" loading="lazy" />
+            <img src="/break-bg.png" alt="" aria-hidden="true" loading="lazy" />
           </div>
           <div className="break__quote">
             <div className="wrap">
