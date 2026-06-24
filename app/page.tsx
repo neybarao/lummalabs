@@ -292,11 +292,11 @@ export default function Home() {
               <span className="figure__tag">Interface</span>
             </div>
             <div className="figure figure--tall reveal">
-              <img src={`${IMG}/lumma-trip-2/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <img src="/trip-produto.png" alt="Amostra de trabalho da Lumma" loading="lazy" />
               <span className="figure__tag">Produto</span>
             </div>
             <div className="figure figure--tall reveal">
-              <img src={`${IMG}/lumma-trip-3/900/1100`} alt="Amostra de trabalho da Lumma" loading="lazy" />
+              <img src="/trip-identidade.jpg" alt="Amostra de trabalho da Lumma" loading="lazy" />
               <span className="figure__tag">Identidade</span>
             </div>
           </div>
