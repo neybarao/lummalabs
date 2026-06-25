@@ -19,7 +19,7 @@ const SITE_URL = "https://lummalabs.com.br";
 const SITE_NAME = "Lumma";
 const TITLE = "Lumma · Estúdio de design e produto digital";
 const DESCRIPTION =
-  "Ajudamos empresas a idealizar, desenhar e prototipar produtos digitais. Sites, SaaS, aplicativos, plataformas, design systems e identidade. Do conceito ao protótipo navegável.";
+  "Estúdio de UI/UX design e prototipagem. Damos forma a produtos digitais: sites, SaaS, apps e design systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,9 +35,15 @@ export const metadata: Metadata = {
     "estúdio de design",
     "design de produto",
     "UX UI",
+    "ui design",
+    "ux design",
     "design de SaaS",
+    "design de software",
     "prototipagem",
     "design system",
+    "transformação digital",
+    "desenvolvimento de sites",
+    "consultoria de ti",
     "websites",
     "design Brasil",
   ],
