@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const LINKS = [
+  { href: "#o-que-resolvemos", label: "O que resolvemos" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#como-trabalhamos", label: "Como funciona" },
   { href: "#por-que", label: "Por que a Lumma" },
-  { href: "#como-trabalhamos", label: "Como trabalhamos" },
-  { href: "#experiencia", label: "Experiência" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -68,7 +68,7 @@ export default function MobileNav() {
             onClick={() => setOpen(false)}
             style={{ transitionDelay: open ? `${0.05 + LINKS.length * 0.04}s` : "0s" }}
           >
-            Conversar
+            Pedir meu Raio-X
           </a>
         </nav>
         <div className="mobile-nav__foot">

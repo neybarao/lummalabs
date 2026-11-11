@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
 
-export const alt = "Lumma · Estúdio de design e produto digital";
+export const alt = "Lumma · Seu negócio encontrado, entendido e escolhido";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -13,7 +13,7 @@ export default function OpengraphImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#0D0D0D",
+          background: "#0A0A0A",
           color: "#F5F5F5",
           display: "flex",
           flexDirection: "column",
@@ -34,7 +34,7 @@ export default function OpengraphImage() {
         </div>
         <div
           style={{
-            fontSize: 92,
+            fontSize: 80,
             lineHeight: 1.0,
             fontWeight: 600,
             letterSpacing: -3,
@@ -42,10 +42,10 @@ export default function OpengraphImage() {
             flexDirection: "column",
           }}
         >
-          <span>Design que dá</span>
+          <span>Seu negócio encontrado,</span>
           <span>
-            forma à sua{" "}
-            <span style={{ color: "#50F160" }}>ideia.</span>
+            entendido e{" "}
+            <span style={{ color: "#50F160" }}>escolhido.</span>
           </span>
         </div>
         <div
@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             color: "rgba(245,245,245,0.62)",
           }}
         >
-          <span>Design · produto · prototipagem</span>
+          <span>Marca · site · Google · SEO para IA</span>
           <span>lummalabs.com.br</span>
         </div>
       </div>
