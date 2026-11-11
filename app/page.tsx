@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Animations from "./animations";
 import MobileNav from "./mobile-nav";
@@ -44,6 +45,23 @@ function IconEscolha() {
 
 const verbIcons = { encontrado: IconBusca, entendido: IconConversa, escolhido: IconEscolha };
 
+// Cada palavra numa máscara, para o título subir palavra por palavra sem esconder o texto.
+function Words({ text }: { text: string }) {
+  const words = text.split(" ");
+  return (
+    <>
+      {words.map((w, i) => (
+        <Fragment key={i}>
+          <span className="w">
+            <span>{w}</span>
+          </span>
+          {i < words.length - 1 ? " " : null}
+        </Fragment>
+      ))}
+    </>
+  );
+}
+
 function ArrowIcon() {
   return (
     <svg className="btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -78,6 +96,7 @@ export default function Home() {
           <a className="nav-cta" href="#contato">Pedir Raio-X</a>
         </nav>
         <MobileNav />
+        <span className="scroll-progress" aria-hidden="true" />
       </header>
 
       <main id="conteudo">
@@ -86,9 +105,9 @@ export default function Home() {
           <div className="hero__content">
             <span className="label hero__label">Presença online para pequenos negócios</span>
             <h1 className="hero-headline display" id="hero-title">
-              Seu negócio encontrado,
+              <Words text="Seu negócio encontrado," />
               <br />
-              entendido e <em>escolhido.</em>
+              <Words text="entendido e" /> <em><Words text="escolhido." /></em>
             </h1>
             <p className="hero-sub">
               Marca, site, Google e conteúdo pensados juntos, com qualidade de empresa grande, para <strong>pequenos negócios e profissionais</strong> que trabalham bem e precisam parecer, online, tão bons quanto são.

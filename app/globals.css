@@ -1877,3 +1877,173 @@ figure.figure {
     padding-top: 56px;
   }
 }
+
+/* ---------- Micro-interações (nov/2026) --------------------- */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* máscara por palavra no título do hero */
+.hero-headline .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.hero-headline .w > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ponto do label pulsando de leve no hero */
+.hero__label::before {
+  box-shadow: 0 0 0 0 rgba(80, 241, 96, 0.5);
+  animation: dot-pulse 2.4s var(--ease-out) infinite;
+}
+
+@keyframes dot-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(80, 241, 96, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(80, 241, 96, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(80, 241, 96, 0); }
+}
+
+/* luz que segue o cursor nos cards */
+.why-card,
+.method {
+  position: relative;
+  isolation: isolate;
+}
+
+.why-card::after,
+.method::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(80, 241, 96, 0.12), transparent 70%);
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.why-card:hover::after,
+.method:hover::after {
+  opacity: 1;
+}
+
+.why-card:hover,
+.method:hover {
+  transform: translateY(-4px);
+}
+
+.method {
+  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+/* ícone do card gira um pouco no hover */
+.why-card__icon svg {
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.why-card:hover .why-card__icon svg {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* serviços: nome desliza e a tag acende */
+.svc__name,
+.svc__apps {
+  transition: transform var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+
+.svc:hover .svc__name {
+  transform: translateX(4px);
+}
+
+.svc:hover .svc__apps {
+  color: var(--accent-ink);
+}
+
+/* links do header e do rodapé com sublinhado que cresce */
+.site-nav a:not(.nav-cta),
+.site-footer ul a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  transition: background-size var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+
+.site-nav a:not(.nav-cta):hover,
+.site-footer ul a:hover {
+  background-size: 100% 1px;
+}
+
+/* tríptico: tag sobe no hover */
+.figure__tag {
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-base) var(--ease-out);
+}
+
+.figure:hover .figure__tag {
+  transform: translateY(-4px);
+  background: rgba(13, 13, 13, 0.85);
+}
+
+/* FAQ abrindo com altura animada (navegadores que suportam ::details-content) */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  .faq__item::details-content {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out),
+      content-visibility var(--dur-slow) allow-discrete;
+  }
+
+  .faq__item[open]::details-content {
+    height: auto;
+    opacity: 1;
+  }
+}
+
+.faq__q span:first-child,
+.faq__q h3 {
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+.faq__q:hover h3 {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__label::before {
+    animation: none;
+  }
+
+  .why-card:hover,
+  .method:hover,
+  .svc:hover .svc__name,
+  .faq__q:hover h3,
+  .figure:hover .figure__tag,
+  .why-card:hover .why-card__icon svg {
+    transform: none;
+  }
+
+  .faq__item::details-content {
+    transition: none;
+  }
+}
