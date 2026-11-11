@@ -186,3 +186,15 @@ export const marqueeItems = [
   "Conteúdo",
   "Comunicação",
 ];
+
+export const manifesto = {
+  title: "Pequeno não é sinônimo de",
+  highlight: "amador.",
+  paragraphs: [
+    "Tem muito negócio bom que ninguém vê. A clínica que atende como poucas e não aparece no Google. O escritório que entrega como empresa grande e se apresenta como improviso. O café que todo mundo indica e ninguém encontra no mapa.",
+    "A gente acredita que cuidado não depende de tamanho. Marca clara, site honesto e presença bem feita não deveriam ser privilégio de quem tem orçamento de multinacional.",
+    "Por isso a Lumma existe: para levar o rigor das grandes empresas a quem está construindo algo do próprio jeito. Sem atalho, sem promessa mágica, sem palavra difícil.",
+  ],
+  closing: "Seu trabalho já fala por você. A gente só acende a",
+  closingHighlight: "luz.",
+} as const;

@@ -8,6 +8,7 @@ import {
   WHATSAPP,
   differentials,
   faqs,
+  manifesto,
   marqueeItems,
   methods,
   services,
@@ -205,7 +206,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="break dark" aria-label="Manifesto">
+        <section className="break dark" aria-label="Assinatura da marca">
           <div className="break__media">
             <img src="/break-bg.png" alt="" aria-hidden="true" loading="lazy" />
           </div>
@@ -257,7 +258,7 @@ export default function Home() {
           <div className="case reveal">
             <div className="case__media">
               <img src="/hero-starfish.jpg" alt="" aria-hidden="true" loading="lazy" />
-              <span className="case__meta-tag">Lumma · Manifesto</span>
+              <span className="case__meta-tag">Lumma</span>
             </div>
             <div className="case__panel">
               {differentials.map((d) => (
@@ -266,10 +267,25 @@ export default function Home() {
                   <p className="case__block-text">{d.text}</p>
                 </div>
               ))}
-              <blockquote className="case__quote">
-                <p>&ldquo;Pequeno não é sinônimo de amador.&rdquo;</p>
-                <footer>Manifesto Lumma</footer>
-              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section className="manifesto dark" id="manifesto" aria-labelledby="manifesto-title">
+          <div className="wrap manifesto__grid">
+            <div className="manifesto__head">
+              <span className="label">Manifesto</span>
+              <h2 className="manifesto__title" id="manifesto-title">
+                {manifesto.title} <em>{manifesto.highlight}</em>
+              </h2>
+            </div>
+            <div className="manifesto__body">
+              {manifesto.paragraphs.map((p, i) => (
+                <p className="reveal" key={i}>{p}</p>
+              ))}
+              <p className="manifesto__closing reveal">
+                {manifesto.closing} <em>{manifesto.closingHighlight}</em>
+              </p>
             </div>
           </div>
         </section>
