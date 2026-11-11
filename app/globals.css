@@ -556,8 +556,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1);
-  transition: transform var(--dur-slow) var(--ease-out), filter var(--dur-slow) var(--ease-out);
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .figure:hover img {
@@ -695,7 +694,7 @@ img {
 
 .svc {
   display: grid;
-  grid-template-columns: 56px 88px 1fr auto;
+  grid-template-columns: 56px 104px 1fr auto;
   gap: 28px;
   align-items: center;
   padding: 26px 0;
@@ -722,11 +721,11 @@ img {
 }
 
 .svc__thumb {
-  width: 88px;
+  width: 104px;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius);
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--paper-2);
+  background: var(--hero-bg);
 }
 
 .svc__thumb img {
@@ -794,8 +793,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.05);
-  opacity: 0.62;
+  object-position: right center;
 }
 
 .break__quote {
@@ -1611,13 +1609,19 @@ img {
   }
 
   .svc {
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 72px 1fr;
     gap: 16px;
     row-gap: 8px;
   }
 
-  .svc__thumb {
+  .svc__num {
     display: none;
+  }
+
+  .svc__thumb {
+    width: 72px;
+    border-radius: 12px;
+    align-self: start;
   }
 
   .svc__apps {
@@ -1763,7 +1767,7 @@ figure.figure {
 
 /* ---------- Manifesto --------------------------------------- */
 .manifesto {
-  background: var(--ink);
+  background: var(--hero-bg);
   color: var(--on-dark);
   padding: 128px 0;
 }
@@ -1838,5 +1842,38 @@ figure.figure {
 @media (max-width: 860px) {
   .manifesto {
     padding: 88px 0;
+  }
+}
+
+.manifesto__media {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  margin-top: 40px;
+  margin-left: -24px;
+  /* funde as bordas da imagem com o fundo da seção */
+  -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+}
+
+@media (max-width: 1080px) {
+  .manifesto__media {
+    width: 240px;
+    margin: 24px 0 0 -16px;
+  }
+}
+
+@media (max-width: 860px) {
+  .break__media {
+    height: 420px;
+  }
+
+  .break__media img {
+    object-position: 82% center;
+  }
+
+  .break__quote {
+    align-items: flex-start;
+    padding-top: 56px;
   }
 }

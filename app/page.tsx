@@ -15,8 +15,6 @@ import {
   verbs,
 } from "./content";
 
-const IMG = "https://picsum.photos/seed";
-
 function IconBusca() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -188,7 +186,7 @@ export default function Home() {
               <article className="svc reveal" key={s.num}>
                 <span className="svc__num">{s.num}</span>
                 <div className="svc__thumb">
-                  <img src={`${IMG}/${s.img}/240/240`} alt="" aria-hidden="true" loading="lazy" />
+                  <img src={s.img} alt="" aria-hidden="true" width={320} height={320} loading="lazy" />
                 </div>
                 <div className="svc__main">
                   <h3 className="svc__name">{s.name}</h3>
@@ -208,7 +206,7 @@ export default function Home() {
 
         <section className="break dark" aria-label="Assinatura da marca">
           <div className="break__media">
-            <img src="/break-bg.png" alt="" aria-hidden="true" loading="lazy" />
+            <img src="/break-luz.webp" alt="" aria-hidden="true" width={1915} height={821} loading="lazy" />
           </div>
           <div className="break__quote">
             <div className="wrap">
@@ -278,6 +276,15 @@ export default function Home() {
               <h2 className="manifesto__title" id="manifesto-title">
                 {manifesto.title} <em>{manifesto.highlight}</em>
               </h2>
+              <img
+                className="manifesto__media"
+                src="/manifesto-esferas.webp"
+                alt=""
+                aria-hidden="true"
+                width={900}
+                height={900}
+                loading="lazy"
+              />
             </div>
             <div className="manifesto__body">
               {manifesto.paragraphs.map((p, i) => (
