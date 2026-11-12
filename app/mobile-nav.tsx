@@ -73,7 +73,6 @@ export default function MobileNav() {
         </nav>
         <div className="mobile-nav__foot">
           <span>oi@lummalabs.com.br</span>
-          <span>(11) 97461 3761</span>
         </div>
       </div>
     </>

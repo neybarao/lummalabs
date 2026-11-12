@@ -5,8 +5,6 @@ import MobileNav from "./mobile-nav";
 import StarBackground from "./star-background";
 import {
   EMAIL,
-  PHONE_DISPLAY,
-  WHATSAPP,
   differentials,
   faqs,
   manifesto,
@@ -369,11 +367,10 @@ export default function Home() {
 
             <div className="cta-alt">
               <span>Fale com a gente:</span>
-              <a className="btn btn-accent" href={WHATSAPP} target="_blank" rel="noopener noreferrer">
-                WhatsApp · {PHONE_DISPLAY}
+              <a className="btn btn-accent" href={`mailto:${EMAIL}`}>
+                {EMAIL}
                 <ArrowIcon />
               </a>
-              <a className="btn btn-ghost-light" href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </div>
           </div>
         </section>
@@ -400,7 +397,6 @@ export default function Home() {
             <h4>Contato</h4>
             <ul>
               <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
-              <li><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">{PHONE_DISPLAY}</a></li>
               <li><a href="https://lummalabs.com.br">lummalabs.com.br</a></li>
             </ul>
           </div>

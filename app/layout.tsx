@@ -7,12 +7,10 @@ import {
   DESCRIPTION,
   EMAIL,
   LEGAL_NAME,
-  PHONE,
   SITE_NAME,
   SITE_URL,
   TAGLINE,
   TITLE,
-  WHATSAPP,
   faqs,
   services,
 } from "./content";
@@ -115,7 +113,6 @@ const jsonLd = {
       description: DESCRIPTION,
       slogan: TAGLINE,
       email: EMAIL,
-      telephone: PHONE,
       areaServed: { "@type": "Country", name: "Brasil" },
       address: { "@type": "PostalAddress", addressCountry: "BR" },
       knowsAbout: [
@@ -135,13 +132,11 @@ const jsonLd = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: PHONE,
         email: EMAIL,
         contactType: "customer service",
         areaServed: "BR",
         availableLanguage: ["Portuguese"],
       },
-      sameAs: [WHATSAPP],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Serviços da Lumma",

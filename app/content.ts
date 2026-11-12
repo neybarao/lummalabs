@@ -6,9 +6,6 @@ export const SITE_NAME = "Lumma";
 export const LEGAL_NAME = "Lumma Labs";
 export const TAGLINE = "Iluminar é tornar possível ver.";
 export const EMAIL = "oi@lummalabs.com.br";
-export const PHONE = "+55-11-97461-3761";
-export const PHONE_DISPLAY = "(11) 97461 3761";
-export const WHATSAPP = "https://wa.me/5511974613761";
 
 export const TITLE = "Lumma · Presença online, sites e SEO para pequenos negócios";
 export const DESCRIPTION =

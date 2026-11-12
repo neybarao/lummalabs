@@ -235,7 +235,7 @@ Mantida exatamente como está hoje. Eyebrow `Como a gente fala`, título `Sem ja
 **CTA do formulário:** Enviar e começar a conversa
 
 **Alternativas de contato (abaixo do form, igual hoje):**
-- WhatsApp: (11) 97461 3761
+- WhatsApp: [número]
 - Email: oi@lummalabs.com.br
 
 ---

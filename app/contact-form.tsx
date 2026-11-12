@@ -40,11 +40,11 @@ export default function ContactForm() {
         form.reset();
       } else {
         const body = await res.json().catch(() => ({}));
-        setErrorMsg(body?.error || "Não conseguimos enviar. Tenta de novo ou nos chama no WhatsApp.");
+        setErrorMsg(body?.error || "Não conseguimos enviar. Tenta de novo ou escreve pra oi@lummalabs.com.br.");
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Sem conexão. Tenta de novo ou nos chama no WhatsApp.");
+      setErrorMsg("Sem conexão. Tenta de novo ou escreve pra oi@lummalabs.com.br.");
       setStatus("error");
     }
   }
@@ -53,7 +53,7 @@ export default function ContactForm() {
     return (
       <div className="contact-form contact-form--success" role="status" aria-live="polite">
         <h3>Recebido. A gente responde em até um dia útil.</h3>
-        <p>Enquanto isso, se preferir falar direto: <a href="https://wa.me/5511974613761">WhatsApp</a> ou <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>.</p>
+        <p>Enquanto isso, se preferir falar direto: <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>.</p>
       </div>
     );
   }

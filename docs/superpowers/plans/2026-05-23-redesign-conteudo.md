@@ -806,7 +806,7 @@ export default function ContactForm() {
     return (
       <div className="contact-form contact-form--success" role="status" aria-live="polite">
         <h3>Recebido. A gente responde em até um dia útil.</h3>
-        <p>Enquanto isso, se preferir falar direto: <a href="https://wa.me/5511974613761">WhatsApp</a> ou <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>.</p>
+        <p>Enquanto isso, se preferir falar direto: <a href="https://wa.me/[número]">WhatsApp</a> ou <a href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>.</p>
       </div>
     );
   }
@@ -892,7 +892,7 @@ export default function ContactForm() {
   <div className="cta-alt">
     <span>Ou se preferir:</span>
     <a className="btn btn-ghost-ink" href="mailto:oi@lummalabs.com.br">oi@lummalabs.com.br</a>
-    <a className="btn btn-ghost-ink" href="https://wa.me/5511974613761" target="_blank" rel="noopener noreferrer">WhatsApp · (11) 97461 3761</a>
+    <a className="btn btn-ghost-ink" href="https://wa.me/[número]" target="_blank" rel="noopener noreferrer">WhatsApp · [número]</a>
   </div>
 </section>
 ```
