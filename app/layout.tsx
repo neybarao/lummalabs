@@ -31,6 +31,16 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+// Imagem de compartilhamento como .png estático: o GitHub Pages define o tipo do arquivo
+// pela extensão, e a rota /opengraph-image (sem extensão) não saía como image/png.
+const OG_IMAGE = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: "Lumma · Seu negócio encontrado, entendido e escolhido",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -71,11 +81,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -109,7 +121,7 @@ const jsonLd = {
       legalName: LEGAL_NAME,
       url: SITE_URL,
       logo: `${SITE_URL}/Logo-lumma-header.svg`,
-      image: `${SITE_URL}/opengraph-image`,
+      image: `${SITE_URL}/og-image.png`,
       description: DESCRIPTION,
       slogan: TAGLINE,
       email: EMAIL,
@@ -170,7 +182,7 @@ const jsonLd = {
       inLanguage: "pt-BR",
       isPartOf: { "@id": SITE_ID },
       about: { "@id": ORG_ID },
-      primaryImageOfPage: `${SITE_URL}/opengraph-image`,
+      primaryImageOfPage: `${SITE_URL}/og-image.png`,
     },
     {
       "@type": "FAQPage",
