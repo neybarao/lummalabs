@@ -272,7 +272,7 @@ export default function Home() {
           </div>
           <div className="case reveal">
             <div className="case__media">
-              <img src="/hero-starfish.jpg" alt="" aria-hidden="true" loading="lazy" />
+              <img src="/por-que.jpg" alt="" aria-hidden="true" loading="lazy" />
               <span className="case__meta-tag">Lumma</span>
             </div>
             <div className="case__panel">
@@ -295,7 +295,7 @@ export default function Home() {
               </h2>
               <img
                 className="manifesto__media"
-                src="/manifesto-esferas.webp"
+                src="/manifesto-lampada.webp"
                 alt=""
                 aria-hidden="true"
                 width={900}

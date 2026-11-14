@@ -244,4 +244,4 @@ Google Analytics (G-3G49BN4MCD) must NOT load until the user explicitly clicks "
 
 - `Logo-lumma-header.svg`: 101x32, text black, sparkle green (#50F160), inner star dark (#093417)
 - `hero-mark.svg`: 72x71, pentagon green (#50F160), inner star dark (#093417)
-- `hero-starfish.jpg`: dark starfish background image for hero, optimized ~150KB
+- `por-que.jpg`: "Por que a Lumma" image, glass objects linked by a green line
